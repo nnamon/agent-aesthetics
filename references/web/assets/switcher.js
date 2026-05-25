@@ -26,18 +26,16 @@
     { id: 's5', label: 'S5 Violet' },
     { id: 's6', label: 'S6 Emerald' },
     { id: 's7', label: 'S7 Slate' },
-  ];
-  const PALETTES_DARK = PALETTES_LIGHT.map(function (p) {
-    return { id: p.id + 'd', label: p.label };
-  });
-  const PALETTES_SCHEMES = [
     { id: 'k1', label: 'K1 Monokai' },
     { id: 'k2', label: 'K2 Solarized' },
     { id: 'k3', label: 'K3 Dracula' },
     { id: 'k4', label: 'K4 Nord' },
     { id: 'k5', label: 'K5 Tokyo Night' },
   ];
-  const VALID = PALETTES_LIGHT.concat(PALETTES_DARK, PALETTES_SCHEMES).map(function (p) { return p.id; });
+  const PALETTES_DARK = PALETTES_LIGHT.map(function (p) {
+    return { id: p.id + 'd', label: p.label };
+  });
+  const VALID = PALETTES_LIGHT.concat(PALETTES_DARK).map(function (p) { return p.id; });
 
   const DEFAULT_P = 'm2';
   const PALETTE_KEY = 'aa-palette';
@@ -122,10 +120,6 @@
       '<div class="topbar-row palette">' +
         '<span class="label">Dark</span>' +
         paletteBtns(PALETTES_DARK) +
-      '</div>' +
-      '<div class="topbar-row palette">' +
-        '<span class="label">Schemes</span>' +
-        paletteBtns(PALETTES_SCHEMES) +
       '</div>';
 
     slot.querySelectorAll('button[data-p]').forEach(function (btn) {
