@@ -4,6 +4,51 @@ A personal design kit for projects vibe-coded with LLM agents.
 Provides one specific aesthetic — "soft-brutalist-document" — so
 generated UIs converge on a signature look instead of looking ad-hoc.
 
+**Live preview:** <https://nnamon.github.io/agent-aesthetics/>
+
+![Hub — M2 Magenta light](screenshots/hub-light.png)
+
+## Showcase
+
+Same kit, eight pages, two palettes (M2 light + M2 dark). The
+geometry — typography, spacing, rules, density — is identical across
+all 26 palettes; only the color tokens swap.
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/hub-light.png" alt="Hub (light)"></td>
+    <td width="50%"><img src="screenshots/hub-dark.png" alt="Hub (dark)"></td>
+  </tr>
+  <tr>
+    <td><sub>Hub · M2 Magenta light</sub></td>
+    <td><sub>Hub · M2 Magenta dark</sub></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/dashboard-light.png" alt="Dashboard"></td>
+    <td><img src="screenshots/charts-dark.png" alt="Charts (dark)"></td>
+  </tr>
+  <tr>
+    <td><sub>Dashboard · KPI tiles, status breakdown, activity table</sub></td>
+    <td><sub>Charts · SVG line/bar/area/donut/sparkline/scatter (dark)</sub></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/reader-light.png" alt="Reader"></td>
+    <td><img src="screenshots/components-light.png" alt="Components"></td>
+  </tr>
+  <tr>
+    <td><sub>Reader · long-form article + sticky TOC + inline syntax tokens</sub></td>
+    <td><sub>Components · atomic catalog with sticky section nav</sub></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/game-dark.png" alt="Game (dark)"></td>
+    <td><img src="screenshots/settings-light.png" alt="Settings"></td>
+  </tr>
+  <tr>
+    <td><sub>Game · text-adventure HUD pattern (dark)</sub></td>
+    <td><sub>Settings · section nav, fields, toggles, danger zone</sub></td>
+  </tr>
+</table>
+
 ## What's in here
 
 ```
@@ -16,6 +61,7 @@ agent-aesthetics/
 │   ├── palettes.json      # All palettes (M2 primary + S/K variants).
 │   ├── typography.json    # Type families, scale, inline-mono semantics.
 │   └── spacing.json       # Spacing scale, page padding, radii.
+├── screenshots/           # Showcase images used by this README.
 └── references/
     └── web/               # Eleven reference HTML pages, the show-don't-tell.
         ├── index.html     # Hub: visual landing card grid.
