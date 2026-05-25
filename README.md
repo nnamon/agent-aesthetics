@@ -34,7 +34,9 @@ agent-aesthetics/
             └── switcher.js# Injects topbar, handles palette + collapse.
 ```
 
-## Preview locally
+## Preview
+
+### Locally
 
 The reference pages are static HTML — any static server works:
 
@@ -42,6 +44,17 @@ The reference pages are static HTML — any static server works:
 python3 -m http.server 8765
 # visit http://localhost:8765/references/web/
 ```
+
+### Deploy to GitHub Pages
+
+A workflow at `.github/workflows/pages.yml` deploys `references/web/`
+as the Pages site root on every push to `main`. To enable:
+
+1. Push the repo to GitHub.
+2. In the repo **Settings → Pages → Source**, select **GitHub Actions**.
+3. Wait for the first workflow run to finish.
+4. Site appears at `https://<user>.github.io/<repo-name>/` — `/index.html`
+   is the hub, `/log.html`, `/charts.html`, etc. are the reference pages.
 
 The topbar lets you flip palette (light row, dark row) and page
 (top tabs). Choice persists in `localStorage`. Esc or the `×` button
