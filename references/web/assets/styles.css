@@ -1025,6 +1025,7 @@ aside.sidebar ul.actions li { margin-bottom: var(--space-2); }
   margin-top: var(--space-6);
 }
 .hub-card {
+  display: block;
   border: 1px solid var(--rule);
   padding: var(--space-5);
   background: var(--bg);
