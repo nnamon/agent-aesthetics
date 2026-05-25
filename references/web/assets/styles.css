@@ -27,20 +27,12 @@
 }
 
 /* ===================================================================
-   palettes — magenta family
+   palettes — light variants
+   eight cool-leaning palettes built on shared geometry. swap the body
+   class to re-skin every token.
    =================================================================== */
 
-body.palette-m1 {
-  --bg: #F3F4F6; --bg-2: #E5E7EB; --bg-3: #D1D5DB;
-  --rule: #9CA3AF; --rule-strong: #6B7280;
-  --text: #111827; --text-muted: #4B5563; --text-faint: #9CA3AF;
-  --accent: #DB2777; --accent-hover: #BE185D;
-  --chrome-bg: #111827; --chrome-fg: #F3F4F6;
-  --syn-path: #DB2777; --syn-num: #B45309; --syn-str: #15803D;
-  --syn-kw: #6D28D9; --syn-type: #0891B2; --syn-comment: #9CA3AF;
-  --syn-bg: #E5E7EB;
-}
-
+/* ---------- M2: magenta — harmonized syntax ---------- */
 body.palette-m2 {
   --bg: #F3F4F6; --bg-2: #E5E7EB; --bg-3: #D1D5DB;
   --rule: #9CA3AF; --rule-strong: #6B7280;
@@ -50,50 +42,6 @@ body.palette-m2 {
   --syn-path: #DB2777; --syn-num: #A16207; --syn-str: #0E7490;
   --syn-kw: #5B21B6; --syn-type: #BE123C; --syn-comment: #9CA3AF;
   --syn-bg: #E5E7EB;
-}
-
-body.palette-m3 {
-  --bg: #F3F4F6; --bg-2: #E5E7EB; --bg-3: #D1D5DB;
-  --rule: #9CA3AF; --rule-strong: #6B7280;
-  --text: #111827; --text-muted: #4B5563; --text-faint: #9CA3AF;
-  --accent: #EC4899; --accent-hover: #DB2777;
-  --chrome-bg: #111827; --chrome-fg: #F3F4F6;
-  --syn-path: #EC4899; --syn-num: #A16207; --syn-str: #0E7490;
-  --syn-kw: #5B21B6; --syn-type: #BE123C; --syn-comment: #9CA3AF;
-  --syn-bg: #E5E7EB;
-}
-
-body.palette-m4 {
-  --bg: #F3F4F6; --bg-2: #E5E7EB; --bg-3: #D1D5DB;
-  --rule: #9CA3AF; --rule-strong: #6B7280;
-  --text: #111827; --text-muted: #4B5563; --text-faint: #9CA3AF;
-  --accent: #9D174D; --accent-hover: #831843;
-  --chrome-bg: #111827; --chrome-fg: #F3F4F6;
-  --syn-path: #9D174D; --syn-num: #A16207; --syn-str: #0E7490;
-  --syn-kw: #5B21B6; --syn-type: #BE123C; --syn-comment: #9CA3AF;
-  --syn-bg: #E5E7EB;
-}
-
-body.palette-m5 {
-  --bg: #F3F4F6; --bg-2: #E5E7EB; --bg-3: #D1D5DB;
-  --rule: #9CA3AF; --rule-strong: #6B7280;
-  --text: #111827; --text-muted: #4B5563; --text-faint: #9CA3AF;
-  --accent: #DB2777; --accent-2: #0891B2; --accent-hover: #BE185D;
-  --chrome-bg: #111827; --chrome-fg: #F3F4F6;
-  --syn-path: #0891B2; --syn-num: #DB2777; --syn-str: #0E7490;
-  --syn-kw: #BE185D; --syn-type: #06B6D4; --syn-comment: #94A3B8;
-  --syn-bg: #ECFEFF;
-}
-
-body.palette-m6 {
-  --bg: #F4F2F6; --bg-2: #E7E3EC; --bg-3: #D4CFDC;
-  --rule: #A299AE; --rule-strong: #78708A;
-  --text: #1A1620; --text-muted: #56506A; --text-faint: #A299AE;
-  --accent: #DB2777; --accent-hover: #BE185D;
-  --chrome-bg: #1A1620; --chrome-fg: #F4F2F6;
-  --syn-path: #DB2777; --syn-num: #A16207; --syn-str: #0E7490;
-  --syn-kw: #6D28D9; --syn-type: #BE123C; --syn-comment: #A299AE;
-  --syn-bg: #E7E3EC;
 }
 
 /* ---------- S1: sky — bright cool blue accent ---------- */
@@ -132,21 +80,58 @@ body.palette-s3 {
   --syn-bg: #E8ECF1;
 }
 
+/* ---------- S4: teal — deep cyan-700, sits between sky and emerald ---------- */
+body.palette-s4 {
+  --bg: #F0F4F6; --bg-2: #DEE8EB; --bg-3: #C5D5D8;
+  --rule: #94ABB0; --rule-strong: #648088;
+  --text: #0A1820; --text-muted: #46606A; --text-faint: #94ABB0;
+  --accent: #0E7490; --accent-hover: #155E75;
+  --chrome-bg: #0A1820; --chrome-fg: #F0F4F6;
+  --syn-path: #0E7490; --syn-num: #A16207; --syn-str: #15803D;
+  --syn-kw: #6D28D9; --syn-type: #4338CA; --syn-comment: #94ABB0;
+  --syn-bg: #DEE8EB;
+}
+
+/* ---------- S5: violet — pure violet, bridges magenta and indigo ---------- */
+body.palette-s5 {
+  --bg: #F4F4F8; --bg-2: #E8E8F0; --bg-3: #D5D5E0;
+  --rule: #9A9AB5; --rule-strong: #6B6B8A;
+  --text: #14141F; --text-muted: #4A4A60; --text-faint: #9A9AB5;
+  --accent: #7C3AED; --accent-hover: #6D28D9;
+  --chrome-bg: #14141F; --chrome-fg: #F4F4F8;
+  --syn-path: #7C3AED; --syn-num: #A16207; --syn-str: #15803D;
+  --syn-kw: #BE185D; --syn-type: #0E7490; --syn-comment: #9A9AB5;
+  --syn-bg: #E8E8F0;
+}
+
+/* ---------- S6: emerald — true green, sophisticated ---------- */
+body.palette-s6 {
+  --bg: #F2F5F3; --bg-2: #DDE8E2; --bg-3: #C5D5CC;
+  --rule: #94B0A0; --rule-strong: #648075;
+  --text: #0A1814; --text-muted: #46605A; --text-faint: #94B0A0;
+  --accent: #059669; --accent-hover: #047857;
+  --chrome-bg: #0A1814; --chrome-fg: #F2F5F3;
+  --syn-path: #059669; --syn-num: #A16207; --syn-str: #4338CA;
+  --syn-kw: #6D28D9; --syn-type: #0E7490; --syn-comment: #94B0A0;
+  --syn-bg: #DDE8E2;
+}
+
+/* ---------- S7: slate — minimalist, deep navy accent ---------- */
+body.palette-s7 {
+  --bg: #F4F5F7; --bg-2: #E5E7EB; --bg-3: #D1D5DB;
+  --rule: #9CA3AF; --rule-strong: #6B7280;
+  --text: #111827; --text-muted: #4B5563; --text-faint: #9CA3AF;
+  --accent: #1E3A8A; --accent-hover: #1E40AF;
+  --chrome-bg: #111827; --chrome-fg: #F4F5F7;
+  --syn-path: #1E3A8A; --syn-num: #A16207; --syn-str: #15803D;
+  --syn-kw: #6D28D9; --syn-type: #4338CA; --syn-comment: #9CA3AF;
+  --syn-bg: #E5E7EB;
+}
+
 /* ===================================================================
    dark variants — bg goes near-black, chrome lifts one tier (lighter
    than bg) for header band visibility, accents brighten for AA contrast.
    =================================================================== */
-
-body.palette-m1d {
-  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
-  --rule: #2D3340; --rule-strong: #4A5060;
-  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
-  --accent: #EC4899; --accent-hover: #F472B6;
-  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
-  --syn-path: #EC4899; --syn-num: #FBBF24; --syn-str: #4ADE80;
-  --syn-kw: #C084FC; --syn-type: #22D3EE; --syn-comment: #6B7280;
-  --syn-bg: #16181F;
-}
 
 body.palette-m2d {
   --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
@@ -157,50 +142,6 @@ body.palette-m2d {
   --syn-path: #EC4899; --syn-num: #F59E0B; --syn-str: #22D3EE;
   --syn-kw: #A78BFA; --syn-type: #FB7185; --syn-comment: #6B7280;
   --syn-bg: #16181F;
-}
-
-body.palette-m3d {
-  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
-  --rule: #2D3340; --rule-strong: #4A5060;
-  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
-  --accent: #F472B6; --accent-hover: #F9A8D4;
-  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
-  --syn-path: #F472B6; --syn-num: #F59E0B; --syn-str: #22D3EE;
-  --syn-kw: #A78BFA; --syn-type: #FB7185; --syn-comment: #6B7280;
-  --syn-bg: #16181F;
-}
-
-body.palette-m4d {
-  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
-  --rule: #2D3340; --rule-strong: #4A5060;
-  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
-  --accent: #DB2777; --accent-hover: #EC4899;
-  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
-  --syn-path: #DB2777; --syn-num: #F59E0B; --syn-str: #22D3EE;
-  --syn-kw: #A78BFA; --syn-type: #FB7185; --syn-comment: #6B7280;
-  --syn-bg: #16181F;
-}
-
-body.palette-m5d {
-  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
-  --rule: #2D3340; --rule-strong: #4A5060;
-  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
-  --accent: #EC4899; --accent-2: #22D3EE; --accent-hover: #F472B6;
-  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
-  --syn-path: #22D3EE; --syn-num: #EC4899; --syn-str: #67E8F9;
-  --syn-kw: #FB7185; --syn-type: #06B6D4; --syn-comment: #6B7280;
-  --syn-bg: #0E1A20;
-}
-
-body.palette-m6d {
-  --bg: #110E1A; --bg-2: #1C1827; --bg-3: #2A2538;
-  --rule: #36304A; --rule-strong: #54486A;
-  --text: #ECE6F5; --text-muted: #9890A8; --text-faint: #6B6480;
-  --accent: #EC4899; --accent-hover: #F472B6;
-  --chrome-bg: #1C1827; --chrome-fg: #ECE6F5;
-  --syn-path: #EC4899; --syn-num: #F59E0B; --syn-str: #22D3EE;
-  --syn-kw: #C084FC; --syn-type: #FB7185; --syn-comment: #6B6480;
-  --syn-bg: #17141F;
 }
 
 body.palette-s1d {
@@ -234,6 +175,50 @@ body.palette-s3d {
   --syn-path: #A3E635; --syn-num: #F472B6; --syn-str: #38BDF8;
   --syn-kw: #C084FC; --syn-type: #22D3EE; --syn-comment: #6B7280;
   --syn-bg: #14171E;
+}
+
+body.palette-s4d {
+  --bg: #0A1820; --bg-2: #14242E; --bg-3: #1F343F;
+  --rule: #2F4855; --rule-strong: #4C6878;
+  --text: #E6F0F3; --text-muted: #94ABB0; --text-faint: #648088;
+  --accent: #22D3EE; --accent-hover: #67E8F9;
+  --chrome-bg: #14242E; --chrome-fg: #E6F0F3;
+  --syn-path: #22D3EE; --syn-num: #FBBF24; --syn-str: #4ADE80;
+  --syn-kw: #C084FC; --syn-type: #818CF8; --syn-comment: #648088;
+  --syn-bg: #0E1E26;
+}
+
+body.palette-s5d {
+  --bg: #14141F; --bg-2: #1F1F2E; --bg-3: #2D2D44;
+  --rule: #393952; --rule-strong: #54546F;
+  --text: #ECECF5; --text-muted: #9A9AB5; --text-faint: #6B6B8A;
+  --accent: #A78BFA; --accent-hover: #C4B5FD;
+  --chrome-bg: #1F1F2E; --chrome-fg: #ECECF5;
+  --syn-path: #A78BFA; --syn-num: #FBBF24; --syn-str: #4ADE80;
+  --syn-kw: #F472B6; --syn-type: #22D3EE; --syn-comment: #6B6B8A;
+  --syn-bg: #1A1A28;
+}
+
+body.palette-s6d {
+  --bg: #0A1814; --bg-2: #14241F; --bg-3: #1F352D;
+  --rule: #2F4C42; --rule-strong: #4C7060;
+  --text: #E6F0EA; --text-muted: #94B0A0; --text-faint: #648075;
+  --accent: #34D399; --accent-hover: #6EE7B7;
+  --chrome-bg: #14241F; --chrome-fg: #E6F0EA;
+  --syn-path: #34D399; --syn-num: #FBBF24; --syn-str: #818CF8;
+  --syn-kw: #C084FC; --syn-type: #22D3EE; --syn-comment: #648075;
+  --syn-bg: #0E1E18;
+}
+
+body.palette-s7d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #60A5FA; --accent-hover: #93C5FD;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #60A5FA; --syn-num: #FBBF24; --syn-str: #4ADE80;
+  --syn-kw: #C084FC; --syn-type: #818CF8; --syn-comment: #6B7280;
+  --syn-bg: #16181F;
 }
 
 /* ===================================================================

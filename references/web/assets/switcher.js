@@ -18,15 +18,14 @@
   ];
 
   const PALETTES_LIGHT = [
-    { id: 'm1', label: 'M1 Original' },
-    { id: 'm2', label: 'M2 Harmonized' },
-    { id: 'm3', label: 'M3 Hot' },
-    { id: 'm4', label: 'M4 Wine' },
-    { id: 'm5', label: 'M5 + Cyan' },
-    { id: 'm6', label: 'M6 Tinted' },
+    { id: 'm2', label: 'M2 Magenta' },
     { id: 's1', label: 'S1 Sky' },
     { id: 's2', label: 'S2 Indigo' },
     { id: 's3', label: 'S3 Lime' },
+    { id: 's4', label: 'S4 Teal' },
+    { id: 's5', label: 'S5 Violet' },
+    { id: 's6', label: 'S6 Emerald' },
+    { id: 's7', label: 'S7 Slate' },
   ];
   const PALETTES_DARK = PALETTES_LIGHT.map(function (p) {
     return { id: p.id + 'd', label: p.label };
