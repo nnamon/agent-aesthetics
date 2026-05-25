@@ -96,6 +96,146 @@ body.palette-m6 {
   --syn-bg: #E7E3EC;
 }
 
+/* ---------- S1: sky — bright cool blue accent ---------- */
+body.palette-s1 {
+  --bg: #F2F5F8; --bg-2: #E2E8F0; --bg-3: #CBD5E1;
+  --rule: #94A3B8; --rule-strong: #64748B;
+  --text: #0F172A; --text-muted: #475569; --text-faint: #94A3B8;
+  --accent: #0284C7; --accent-hover: #0369A1;
+  --chrome-bg: #0F172A; --chrome-fg: #F2F5F8;
+  --syn-path: #0284C7; --syn-num: #A16207; --syn-str: #15803D;
+  --syn-kw: #6D28D9; --syn-type: #0F766E; --syn-comment: #94A3B8;
+  --syn-bg: #E2E8F0;
+}
+
+/* ---------- S2: indigo — deep blue-violet ---------- */
+body.palette-s2 {
+  --bg: #F2F4F8; --bg-2: #E4E8F0; --bg-3: #CFD5E1;
+  --rule: #94A3B8; --rule-strong: #64748B;
+  --text: #0F172A; --text-muted: #475569; --text-faint: #94A3B8;
+  --accent: #4338CA; --accent-hover: #3730A3;
+  --chrome-bg: #0F172A; --chrome-fg: #F2F4F8;
+  --syn-path: #4338CA; --syn-num: #A16207; --syn-str: #15803D;
+  --syn-kw: #6D28D9; --syn-type: #0F766E; --syn-comment: #94A3B8;
+  --syn-bg: #E4E8F0;
+}
+
+/* ---------- S3: lime — wild, electric chartreuse ---------- */
+body.palette-s3 {
+  --bg: #F4F6F8; --bg-2: #E8ECF1; --bg-3: #DAE0E8;
+  --rule: #C8D0DA; --rule-strong: #A8B2BF;
+  --text: #0B1220; --text-muted: #5A6470; --text-faint: #8B95A1;
+  --accent: #65A30D; --accent-hover: #4D7C0F;
+  --chrome-bg: #0B1220; --chrome-fg: #F4F6F8;
+  --syn-path: #4D7C0F; --syn-num: #BE185D; --syn-str: #1E40AF;
+  --syn-kw: #6D28D9; --syn-type: #0E7490; --syn-comment: #7E8896;
+  --syn-bg: #E8ECF1;
+}
+
+/* ===================================================================
+   dark variants — bg goes near-black, chrome lifts one tier (lighter
+   than bg) for header band visibility, accents brighten for AA contrast.
+   =================================================================== */
+
+body.palette-m1d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #EC4899; --accent-hover: #F472B6;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #EC4899; --syn-num: #FBBF24; --syn-str: #4ADE80;
+  --syn-kw: #C084FC; --syn-type: #22D3EE; --syn-comment: #6B7280;
+  --syn-bg: #16181F;
+}
+
+body.palette-m2d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #EC4899; --accent-hover: #F472B6;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #EC4899; --syn-num: #F59E0B; --syn-str: #22D3EE;
+  --syn-kw: #A78BFA; --syn-type: #FB7185; --syn-comment: #6B7280;
+  --syn-bg: #16181F;
+}
+
+body.palette-m3d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #F472B6; --accent-hover: #F9A8D4;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #F472B6; --syn-num: #F59E0B; --syn-str: #22D3EE;
+  --syn-kw: #A78BFA; --syn-type: #FB7185; --syn-comment: #6B7280;
+  --syn-bg: #16181F;
+}
+
+body.palette-m4d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #DB2777; --accent-hover: #EC4899;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #DB2777; --syn-num: #F59E0B; --syn-str: #22D3EE;
+  --syn-kw: #A78BFA; --syn-type: #FB7185; --syn-comment: #6B7280;
+  --syn-bg: #16181F;
+}
+
+body.palette-m5d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #EC4899; --accent-2: #22D3EE; --accent-hover: #F472B6;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #22D3EE; --syn-num: #EC4899; --syn-str: #67E8F9;
+  --syn-kw: #FB7185; --syn-type: #06B6D4; --syn-comment: #6B7280;
+  --syn-bg: #0E1A20;
+}
+
+body.palette-m6d {
+  --bg: #110E1A; --bg-2: #1C1827; --bg-3: #2A2538;
+  --rule: #36304A; --rule-strong: #54486A;
+  --text: #ECE6F5; --text-muted: #9890A8; --text-faint: #6B6480;
+  --accent: #EC4899; --accent-hover: #F472B6;
+  --chrome-bg: #1C1827; --chrome-fg: #ECE6F5;
+  --syn-path: #EC4899; --syn-num: #F59E0B; --syn-str: #22D3EE;
+  --syn-kw: #C084FC; --syn-type: #FB7185; --syn-comment: #6B6480;
+  --syn-bg: #17141F;
+}
+
+body.palette-s1d {
+  --bg: #0B1220; --bg-2: #161E2E; --bg-3: #232D40;
+  --rule: #2D384C; --rule-strong: #4D5868;
+  --text: #E8EFFA; --text-muted: #94A3B8; --text-faint: #64748B;
+  --accent: #38BDF8; --accent-hover: #7DD3FC;
+  --chrome-bg: #161E2E; --chrome-fg: #E8EFFA;
+  --syn-path: #38BDF8; --syn-num: #FBBF24; --syn-str: #4ADE80;
+  --syn-kw: #C084FC; --syn-type: #2DD4BF; --syn-comment: #64748B;
+  --syn-bg: #0E1828;
+}
+
+body.palette-s2d {
+  --bg: #0F0F1F; --bg-2: #1A1A2E; --bg-3: #262640;
+  --rule: #2D2D44; --rule-strong: #4A4A66;
+  --text: #E8E8F5; --text-muted: #9696B8; --text-faint: #6464AA;
+  --accent: #818CF8; --accent-hover: #A5B4FC;
+  --chrome-bg: #1A1A2E; --chrome-fg: #E8E8F5;
+  --syn-path: #818CF8; --syn-num: #FBBF24; --syn-str: #4ADE80;
+  --syn-kw: #C084FC; --syn-type: #2DD4BF; --syn-comment: #6464AA;
+  --syn-bg: #15152A;
+}
+
+body.palette-s3d {
+  --bg: #0F1117; --bg-2: #1A1D26; --bg-3: #262A35;
+  --rule: #2D3340; --rule-strong: #4A5060;
+  --text: #E8EAED; --text-muted: #9AA0AB; --text-faint: #6B7280;
+  --accent: #84CC16; --accent-hover: #A3E635;
+  --chrome-bg: #1A1D26; --chrome-fg: #E8EAED;
+  --syn-path: #A3E635; --syn-num: #F472B6; --syn-str: #38BDF8;
+  --syn-kw: #C084FC; --syn-type: #22D3EE; --syn-comment: #6B7280;
+  --syn-bg: #14171E;
+}
+
 /* ===================================================================
    reset & base
    =================================================================== */
@@ -132,7 +272,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: var(--space-5) 0; }
   background: var(--chrome-bg);
   color: var(--chrome-fg);
   border-bottom: 1px solid var(--rule-strong);
-  min-height: 76px; /* reserve space before JS injects */
+  min-height: 108px; /* 1 primary + 2 palette rows */
 }
 
 .topbar-row {
@@ -227,12 +367,52 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: var(--space-5) 0; }
 .topbar-row.palette button.active { opacity: 1; background: rgba(255,255,255,0.10); font-weight: 600; color: var(--accent); }
 
 @media (max-width: 640px) {
-  .topbar { min-height: 80px; }
+  .topbar { min-height: 116px; }
   .topbar-row.primary .brand { padding: var(--space-2) var(--space-3); font-size: 12px; }
   .topbar-row.primary .tab { padding: var(--space-2) var(--space-3); font-size: 12px; }
   .topbar-row.palette .label { padding: 4px var(--space-3); font-size: 9px; }
   .topbar-row.palette button { padding: 4px var(--space-3); font-size: 10px; }
 }
+
+/* close button in topbar primary row */
+.topbar-close {
+  flex: 0 0 auto;
+  background: transparent;
+  border: 0;
+  color: var(--chrome-fg);
+  cursor: pointer;
+  padding: var(--space-3) var(--space-3);
+  font-family: var(--mono);
+  font-size: 14px;
+  opacity: 0.45;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+.topbar-close:hover { opacity: 1; background: rgba(255,255,255,0.05); }
+
+/* floating reveal button when topbar is hidden */
+.topbar-reveal {
+  position: fixed;
+  top: 8px; right: 8px; z-index: 100;
+  background: var(--chrome-bg);
+  color: var(--chrome-fg);
+  border: 1px solid var(--rule-strong);
+  padding: 6px 12px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: none;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+.topbar-reveal:hover { opacity: 1; }
+
+body.topbar-collapsed .topbar { display: none; }
+body.topbar-collapsed .topbar-reveal { display: inline-flex; align-items: center; gap: 6px; }
 
 /* ===================================================================
    page chrome
