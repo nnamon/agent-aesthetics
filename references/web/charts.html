@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>agent-aesthetics — Charts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page wide">
+
+  <div class="top-row">
+    <span class="brand">Example <span class="dot">·</span> charts</span>
+    <a class="signin" href="signin.html">Sign in</a>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Index</a><span class="sep">/</span>
+    <span class="current">Charts</span>
+  </nav>
+
+  <h1>Data visualization</h1>
+  <p style="color: var(--text-muted); margin: 0 0 var(--space-6) 0;">SVG-based charts using the palette tokens. Each chart inherits accent + syntax colors so palette swaps re-skin everything.</p>
+
+  <div class="charts-grid">
+
+    <!-- LINE CHART -->
+    <div class="card full">
+      <div class="card-title"><span>Daily latency p50 / p95 / p99</span><span class="meta">ms, last 30 days</span></div>
+
+      <svg viewBox="0 0 800 240" class="chart-svg" preserveAspectRatio="none" style="height: 240px;">
+        <!-- gridlines -->
+        <line class="grid-line" x1="50" y1="40" x2="780" y2="40" />
+        <line class="grid-line" x1="50" y1="90" x2="780" y2="90" />
+        <line class="grid-line" x1="50" y1="140" x2="780" y2="140" />
+        <line class="grid-line" x1="50" y1="190" x2="780" y2="190" />
+        <!-- y labels -->
+        <text class="tick-label" x="44" y="44" text-anchor="end">200</text>
+        <text class="tick-label" x="44" y="94" text-anchor="end">150</text>
+        <text class="tick-label" x="44" y="144" text-anchor="end">100</text>
+        <text class="tick-label" x="44" y="194" text-anchor="end">50</text>
+        <!-- axes -->
+        <line class="axis-line" x1="50" y1="220" x2="780" y2="220" />
+        <line class="axis-line" x1="50" y1="20" x2="50" y2="220" />
+        <!-- x labels -->
+        <text class="tick-label" x="50" y="235" text-anchor="middle">Apr 26</text>
+        <text class="tick-label" x="232" y="235" text-anchor="middle">May 03</text>
+        <text class="tick-label" x="415" y="235" text-anchor="middle">May 10</text>
+        <text class="tick-label" x="597" y="235" text-anchor="middle">May 17</text>
+        <text class="tick-label" x="780" y="235" text-anchor="middle">May 24</text>
+
+        <!-- p99 -->
+        <polyline class="series-line s3" points="50,110 75,95 100,120 125,80 150,90 175,100 200,75 225,85 250,70 275,90 300,60 325,80 350,65 375,55 400,70 425,75 450,60 475,80 500,70 525,55 550,65 575,75 600,60 625,50 650,65 675,70 700,55 725,65 750,50 775,40" />
+        <!-- p95 -->
+        <polyline class="series-line s2" points="50,150 75,145 100,160 125,135 150,140 175,155 200,135 225,145 250,130 275,150 300,125 325,140 350,130 375,120 400,135 425,140 450,125 475,140 500,135 525,120 550,130 575,140 600,125 625,115 650,130 675,135 700,120 725,130 750,115 775,110" />
+        <!-- p50 (accent) -->
+        <polyline class="series-line" points="50,195 75,200 100,190 125,205 150,200 175,195 200,205 225,200 250,210 275,200 300,210 325,205 350,210 375,215 400,205 425,200 450,210 475,205 500,210 525,215 550,210 575,205 600,215 625,220 650,210 675,205 700,215 725,210 750,215 775,218" />
+      </svg>
+
+      <div class="legend">
+        <span><span class="sw s1"></span>p50</span>
+        <span><span class="sw s2"></span>p95</span>
+        <span><span class="sw s3"></span>p99</span>
+      </div>
+    </div>
+
+    <!-- BAR CHART -->
+    <div class="card">
+      <div class="card-title"><span>Runs by status, last 7 days</span><span class="meta">count</span></div>
+
+      <svg viewBox="0 0 380 220" class="chart-svg" style="height: 220px;">
+        <!-- gridlines -->
+        <line class="grid-line" x1="40" y1="40" x2="360" y2="40" />
+        <line class="grid-line" x1="40" y1="90" x2="360" y2="90" />
+        <line class="grid-line" x1="40" y1="140" x2="360" y2="140" />
+        <!-- axes -->
+        <line class="axis-line" x1="40" y1="180" x2="360" y2="180" />
+        <!-- bars -->
+        <rect class="series-bar" x="60"  y="74"  width="32" height="106" />
+        <rect class="series-bar" x="105" y="58"  width="32" height="122" />
+        <rect class="series-bar" x="150" y="90"  width="32" height="90" />
+        <rect class="series-bar" x="195" y="38"  width="32" height="142" />
+        <rect class="series-bar" x="240" y="50"  width="32" height="130" />
+        <rect class="series-bar dim" x="285" y="118" width="32" height="62" />
+        <rect class="series-bar dim" x="330" y="92" width="32" height="88" />
+        <!-- bar labels -->
+        <text class="tick-label" x="76"  y="195" text-anchor="middle">Mon</text>
+        <text class="tick-label" x="121" y="195" text-anchor="middle">Tue</text>
+        <text class="tick-label" x="166" y="195" text-anchor="middle">Wed</text>
+        <text class="tick-label" x="211" y="195" text-anchor="middle">Thu</text>
+        <text class="tick-label" x="256" y="195" text-anchor="middle">Fri</text>
+        <text class="tick-label" x="301" y="195" text-anchor="middle">Sat</text>
+        <text class="tick-label" x="346" y="195" text-anchor="middle">Sun</text>
+        <!-- value tops -->
+        <text class="tick-label" x="76"  y="70"  text-anchor="middle">142</text>
+        <text class="tick-label" x="121" y="54"  text-anchor="middle">168</text>
+        <text class="tick-label" x="166" y="86"  text-anchor="middle">119</text>
+        <text class="tick-label" x="211" y="34"  text-anchor="middle">204</text>
+        <text class="tick-label" x="256" y="46"  text-anchor="middle">178</text>
+        <text class="tick-label" x="301" y="114" text-anchor="middle">96</text>
+        <text class="tick-label" x="346" y="88"  text-anchor="middle">140</text>
+      </svg>
+    </div>
+
+    <!-- AREA CHART -->
+    <div class="card">
+      <div class="card-title"><span>Cost trend</span><span class="meta">$ per day</span></div>
+
+      <svg viewBox="0 0 380 220" class="chart-svg" style="height: 220px;">
+        <!-- gridlines -->
+        <line class="grid-line" x1="40" y1="40" x2="360" y2="40" />
+        <line class="grid-line" x1="40" y1="90" x2="360" y2="90" />
+        <line class="grid-line" x1="40" y1="140" x2="360" y2="140" />
+        <line class="axis-line" x1="40" y1="180" x2="360" y2="180" />
+
+        <!-- area -->
+        <polygon class="series-area" points="40,140 80,120 120,135 160,90 200,100 240,75 280,85 320,60 360,70 360,180 40,180" />
+        <polyline class="series-line" points="40,140 80,120 120,135 160,90 200,100 240,75 280,85 320,60 360,70" />
+        <!-- dots -->
+        <circle class="series-dot" cx="40"  cy="140" r="3" />
+        <circle class="series-dot" cx="80"  cy="120" r="3" />
+        <circle class="series-dot" cx="120" cy="135" r="3" />
+        <circle class="series-dot" cx="160" cy="90"  r="3" />
+        <circle class="series-dot" cx="200" cy="100" r="3" />
+        <circle class="series-dot" cx="240" cy="75"  r="3" />
+        <circle class="series-dot" cx="280" cy="85"  r="3" />
+        <circle class="series-dot" cx="320" cy="60"  r="3" />
+        <circle class="series-dot" cx="360" cy="70"  r="3" />
+
+        <text class="tick-label" x="40"  y="195" text-anchor="middle">May 1</text>
+        <text class="tick-label" x="200" y="195" text-anchor="middle">May 15</text>
+        <text class="tick-label" x="360" y="195" text-anchor="middle">May 26</text>
+        <text class="tick-label" x="34"  y="44"  text-anchor="end">$8</text>
+        <text class="tick-label" x="34"  y="94"  text-anchor="end">$6</text>
+        <text class="tick-label" x="34"  y="144" text-anchor="end">$4</text>
+        <text class="tick-label" x="34"  y="184" text-anchor="end">$2</text>
+      </svg>
+    </div>
+
+    <!-- DONUT CHART -->
+    <div class="card">
+      <div class="card-title"><span>Outcome mix</span><span class="meta">last 1,247 runs</span></div>
+
+      <div class="donut-wrap">
+        <svg viewBox="0 0 100 100" class="donut-svg" style="width: 140px; height: 140px;">
+          <!-- track -->
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--bg-3)" stroke-width="14" />
+          <!-- slices: stroke-dasharray = [length, gap]; circumference = 2*pi*40 ≈ 251.3 -->
+          <!-- s1: completed 89.2% → 224.2 -->
+          <circle class="slice s1" cx="50" cy="50" r="40" fill="none" stroke-width="14"
+            stroke-dasharray="224.2 251.3" stroke-dashoffset="0" transform="rotate(-90 50 50)" />
+          <!-- s2: errored 7.1% → 17.8, start after 224.2 → dashoffset -224.2 -->
+          <circle class="slice s2" cx="50" cy="50" r="40" fill="none" stroke-width="14"
+            stroke-dasharray="17.8 251.3" stroke-dashoffset="-224.2" transform="rotate(-90 50 50)" />
+          <!-- s3: partial 2.2% → 5.5, start after 242 → dashoffset -242 -->
+          <circle class="slice s3" cx="50" cy="50" r="40" fill="none" stroke-width="14"
+            stroke-dasharray="5.5 251.3" stroke-dashoffset="-242" transform="rotate(-90 50 50)" />
+          <!-- s4: timeout 1.4% → 3.5 -->
+          <circle class="slice s4" cx="50" cy="50" r="40" fill="none" stroke-width="14"
+            stroke-dasharray="3.5 251.3" stroke-dashoffset="-247.5" transform="rotate(-90 50 50)" />
+        </svg>
+        <div>
+          <div class="donut-center">
+            <div class="big">89.2%</div>
+            <div class="lbl">Success</div>
+          </div>
+          <div class="legend" style="margin-top: var(--space-3); flex-direction: column; gap: 4px;">
+            <span><span class="sw" style="background: var(--accent);"></span>Completed · 1,112</span>
+            <span><span class="sw" style="background: var(--syn-type);"></span>Errored · 89</span>
+            <span><span class="sw" style="background: var(--syn-str);"></span>Partial · 28</span>
+            <span><span class="sw" style="background: var(--syn-num);"></span>Timed out · 18</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCATTER -->
+    <div class="card">
+      <div class="card-title"><span>Cost vs. duration</span><span class="meta">per run</span></div>
+
+      <svg viewBox="0 0 380 220" class="chart-svg" style="height: 220px;">
+        <line class="grid-line" x1="40" y1="40" x2="360" y2="40" />
+        <line class="grid-line" x1="40" y1="90" x2="360" y2="90" />
+        <line class="grid-line" x1="40" y1="140" x2="360" y2="140" />
+        <line class="axis-line" x1="40" y1="180" x2="360" y2="180" />
+        <line class="axis-line" x1="40" y1="20" x2="40" y2="180" />
+
+        <!-- codex points (s1 / accent) -->
+        <circle class="scatter-pt" cx="68"  cy="160" r="3.5" />
+        <circle class="scatter-pt" cx="84"  cy="150" r="3.5" />
+        <circle class="scatter-pt" cx="98"  cy="140" r="3.5" />
+        <circle class="scatter-pt" cx="120" cy="155" r="3.5" />
+        <circle class="scatter-pt" cx="140" cy="130" r="3.5" />
+        <circle class="scatter-pt" cx="160" cy="120" r="3.5" />
+        <circle class="scatter-pt" cx="180" cy="100" r="3.5" />
+        <circle class="scatter-pt" cx="210" cy="115" r="3.5" />
+        <circle class="scatter-pt" cx="240" cy="80"  r="3.5" />
+        <circle class="scatter-pt" cx="270" cy="95"  r="3.5" />
+        <circle class="scatter-pt" cx="300" cy="70"  r="3.5" />
+        <circle class="scatter-pt" cx="330" cy="60"  r="3.5" />
+
+        <!-- claude points (s2 / type) -->
+        <circle class="scatter-pt s2" cx="80"  cy="130" r="3.5" />
+        <circle class="scatter-pt s2" cx="110" cy="110" r="3.5" />
+        <circle class="scatter-pt s2" cx="135" cy="90"  r="3.5" />
+        <circle class="scatter-pt s2" cx="170" cy="70"  r="3.5" />
+        <circle class="scatter-pt s2" cx="200" cy="55"  r="3.5" />
+        <circle class="scatter-pt s2" cx="230" cy="45"  r="3.5" />
+        <circle class="scatter-pt s2" cx="280" cy="40"  r="3.5" />
+        <circle class="scatter-pt s2" cx="320" cy="30"  r="3.5" />
+
+        <text class="tick-label" x="200" y="200" text-anchor="middle">duration (s) →</text>
+        <text class="tick-label" x="20"  y="100" text-anchor="middle" transform="rotate(-90 20 100)">↑ cost ($)</text>
+      </svg>
+
+      <div class="legend">
+        <span><span class="sw s1"></span>codex</span>
+        <span><span class="sw s2"></span>claude</span>
+      </div>
+    </div>
+
+    <!-- SPARKLINE TABLE -->
+    <div class="card full">
+      <div class="card-title"><span>Top agents</span><span class="meta">7d trend, sorted by runs</span></div>
+
+      <div class="stat-row" style="font-weight: 600; color: var(--text-muted); border-bottom: 1px solid var(--rule); padding-bottom: var(--space-2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;">
+        <span class="name">Agent</span>
+        <span style="font-family: var(--sans);">Trend</span>
+        <span class="num">Runs</span>
+        <span class="delta">Δ</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="name">steady-engine</span>
+        <span>
+          <svg class="sparkline" viewBox="0 0 80 22" preserveAspectRatio="none">
+            <path class="area" d="M0,18 L13,14 L26,16 L40,10 L53,8 L66,4 L80,2 L80,22 L0,22 Z" />
+            <path class="line" d="M0,18 L13,14 L26,16 L40,10 L53,8 L66,4 L80,2" />
+          </svg>
+        </span>
+        <span class="num">412</span>
+        <span class="delta up">+18%</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="name">copper-snail</span>
+        <span>
+          <svg class="sparkline" viewBox="0 0 80 22" preserveAspectRatio="none">
+            <path class="area" d="M0,8 L13,10 L26,6 L40,12 L53,9 L66,5 L80,7 L80,22 L0,22 Z" />
+            <path class="line" d="M0,8 L13,10 L26,6 L40,12 L53,9 L66,5 L80,7" />
+          </svg>
+        </span>
+        <span class="num">311</span>
+        <span class="delta up">+4%</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="name">muted-fern</span>
+        <span>
+          <svg class="sparkline" viewBox="0 0 80 22" preserveAspectRatio="none">
+            <path class="area" d="M0,4 L13,6 L26,10 L40,8 L53,12 L66,14 L80,18 L80,22 L0,22 Z" />
+            <path class="line" d="M0,4 L13,6 L26,10 L40,8 L53,12 L66,14 L80,18" />
+          </svg>
+        </span>
+        <span class="num">238</span>
+        <span class="delta down">−12%</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="name">opal-cycle</span>
+        <span>
+          <svg class="sparkline" viewBox="0 0 80 22" preserveAspectRatio="none">
+            <path class="area" d="M0,12 L13,10 L26,14 L40,11 L53,9 L66,11 L80,8 L80,22 L0,22 Z" />
+            <path class="line" d="M0,12 L13,10 L26,14 L40,11 L53,9 L66,11 L80,8" />
+          </svg>
+        </span>
+        <span class="num">187</span>
+        <span class="delta up">+2%</span>
+      </div>
+
+      <div class="stat-row">
+        <span class="name">quiet-ledger</span>
+        <span>
+          <svg class="sparkline" viewBox="0 0 80 22" preserveAspectRatio="none">
+            <path class="area" d="M0,14 L13,12 L26,8 L40,6 L53,4 L66,2 L80,4 L80,22 L0,22 Z" />
+            <path class="line" d="M0,14 L13,12 L26,8 L40,6 L53,4 L66,2 L80,4" />
+          </svg>
+        </span>
+        <span class="num">99</span>
+        <span class="delta up">+31%</span>
+      </div>
+
+    </div>
+
+    <!-- HEATMAP -->
+    <div class="card full">
+      <div class="card-title"><span>Activity heatmap</span><span class="meta">last 26 weeks · runs per day</span></div>
+
+      <div class="heatmap" id="heatmap" style="grid-template-columns: repeat(26, 1fr); grid-template-rows: repeat(7, 1fr);"></div>
+
+      <div class="legend" style="justify-content: flex-end; margin-top: var(--space-3);">
+        <span style="margin-right: 4px;">less</span>
+        <span class="sw" style="background: var(--bg-3); margin-right: 2px;"></span>
+        <span class="sw" style="background: color-mix(in srgb, var(--accent) 15%, var(--bg-3)); margin-right: 2px;"></span>
+        <span class="sw" style="background: color-mix(in srgb, var(--accent) 30%, var(--bg-3)); margin-right: 2px;"></span>
+        <span class="sw" style="background: color-mix(in srgb, var(--accent) 55%, var(--bg-3)); margin-right: 2px;"></span>
+        <span class="sw" style="background: color-mix(in srgb, var(--accent) 80%, var(--bg-3)); margin-right: 2px;"></span>
+        <span class="sw" style="background: var(--accent); margin-right: 6px;"></span>
+        <span>more</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site">
+    <span>Example <span class="dot">·</span> charts © 2026</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#">Export</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script>
+  // generate heatmap cells (26 weeks × 7 days = 182 cells)
+  (function(){
+    var hm = document.getElementById('heatmap');
+    if (!hm) return;
+    // deterministic pseudo-random pattern, weighted by recency
+    var s = 17;
+    function r(){ s = (s * 1103515245 + 12345) & 0x7fffffff; return s / 0x7fffffff; }
+    // column-major: weeks × days
+    var cells = [];
+    for (var d = 0; d < 7; d++) {
+      for (var w = 0; w < 26; w++) {
+        var weight = 0.3 + (w / 26) * 0.6;
+        var v = r() * weight;
+        var lv = v < 0.15 ? 0 : v < 0.3 ? 1 : v < 0.5 ? 2 : v < 0.7 ? 3 : v < 0.88 ? 4 : 5;
+        cells.push('<div class="cell' + (lv ? ' lv' + lv : '') + '" title="week ' + (w+1) + '"></div>');
+      }
+    }
+    hm.innerHTML = cells.join('');
+  })();
+</script>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

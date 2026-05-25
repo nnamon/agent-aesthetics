@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agent Aesthetics — Settings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page">
+
+  <div class="top-row">
+    <span class="brand">Example <span style="color: var(--text-faint);">·</span> account</span>
+    <a class="signin" href="#">Sign out</a>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="#">Index</a><span class="sep">/</span>
+    <span class="current">Settings</span>
+  </nav>
+
+  <h1>Settings</h1>
+  <p style="color: var(--text-muted); margin: 0 0 var(--space-6) 0;">Manage your profile, preferences, and API access.</p>
+
+  <div class="settings-grid">
+    <nav class="settings-nav">
+      <a href="#profile" class="active">Profile</a>
+      <a href="#prefs">Preferences</a>
+      <a href="#api">API keys</a>
+      <a href="#notify">Notifications</a>
+      <div class="nav-sep"></div>
+      <a href="#danger" class="danger">Danger zone</a>
+    </nav>
+
+    <div>
+
+      <section id="profile" class="settings-section">
+        <h2>Profile</h2>
+        <p class="description">Public information shown on your runs and writeups.</p>
+
+        <div class="field">
+          <label class="field-label">Display name
+            <span class="hint">Visible to anyone who can view your runs.</span>
+          </label>
+          <div class="field-input">
+            <input type="text" value="steady-engine">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Email</label>
+          <div class="field-input">
+            <input type="email" value="user@example.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Bio
+            <span class="hint">Markdown supported.</span>
+          </label>
+          <div class="field-input">
+            <textarea rows="3">Reverse engineer. N64 microcode enjoyer. Frequent participant in DEF CON and Midnight Sun quals.</textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Visibility</label>
+          <div class="field-input">
+            <div class="radio-group">
+              <label><input type="radio" name="vis" checked> Public — anyone with the link can view</label>
+              <label><input type="radio" name="vis"> Unlisted — link required, no search</label>
+              <label><input type="radio" name="vis"> Private — only you</label>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--space-4);">
+          <a class="btn" href="#">Save profile</a>
+          <a class="btn secondary" href="#">Cancel</a>
+        </div>
+      </section>
+
+      <section id="prefs" class="settings-section">
+        <h2>Preferences</h2>
+        <p class="description">How the interface renders for you.</p>
+
+        <div class="field">
+          <label class="field-label">Theme</label>
+          <div class="field-input">
+            <select>
+              <option>Auto — match system</option>
+              <option>Light</option>
+              <option>Dark</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Density</label>
+          <div class="field-input">
+            <div class="radio-group">
+              <label><input type="radio" name="density"> Comfortable</label>
+              <label><input type="radio" name="density" checked> Compact</label>
+              <label><input type="radio" name="density"> Dense</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Default model
+            <span class="hint">Used when starting a new agent run.</span>
+          </label>
+          <div class="field-input">
+            <select>
+              <option>codex</option>
+              <option>claude-opus-4.7</option>
+              <option>claude-sonnet-4.6</option>
+              <option>gpt-5.4-nano</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Autosave</label>
+          <div class="field-input">
+            <div class="toggle-row">
+              <input type="checkbox" class="toggle" checked>
+              <span>Save runs every 30 seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Show raw token usage</label>
+          <div class="field-input">
+            <div class="toggle-row">
+              <input type="checkbox" class="toggle">
+              <span>Expose prompt / completion / cache counters</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="api" class="settings-section">
+        <h2>API keys</h2>
+        <p class="description">Tokens for programmatic access to your runs.</p>
+
+        <div class="data-scroll">
+        <table class="data">
+          <thead>
+            <tr><th>Name</th><th>Token</th><th>Created</th><th>Last used</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ci/midnight-sun</td>
+              <td><code class="t-path">aa_••••••••••a7c1</code></td>
+              <td>2026-03-14</td>
+              <td>2026-05-25 14:33</td>
+              <td><a href="#" style="color: var(--accent);">Revoke</a></td>
+            </tr>
+            <tr>
+              <td>laptop</td>
+              <td><code class="t-path">aa_••••••••••2f08</code></td>
+              <td>2025-12-01</td>
+              <td>2026-05-23 09:01</td>
+              <td><a href="#" style="color: var(--accent);">Revoke</a></td>
+            </tr>
+            <tr>
+              <td>old-server <span class="pill timeout">unused 60d</span></td>
+              <td><code class="t-path">aa_••••••••••9d04</code></td>
+              <td>2024-08-19</td>
+              <td>2026-03-19 17:44</td>
+              <td><a href="#" style="color: var(--accent);">Revoke</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div style="margin-top: var(--space-4);">
+          <a class="btn" href="#">+ Create new key</a>
+        </div>
+      </section>
+
+      <section id="notify" class="settings-section">
+        <h2>Notifications</h2>
+        <p class="description">When we get in touch.</p>
+
+        <div class="field">
+          <label class="field-label">Email me when</label>
+          <div class="field-input">
+            <div class="check-group">
+              <label><input type="checkbox" checked> A run completes</label>
+              <label><input type="checkbox" checked> A run errors</label>
+              <label><input type="checkbox"> A run times out</label>
+              <label><input type="checkbox"> Weekly digest of activity</label>
+              <label><input type="checkbox"> New writeup published in followed CTFs</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="danger" class="settings-section danger-zone">
+        <h2>Danger zone</h2>
+        <p class="description">Operations that cannot be undone.</p>
+
+        <div class="field">
+          <label class="field-label">Delete all run history
+            <span class="hint">Keeps your account, removes every run and transcript.</span>
+          </label>
+          <div class="field-input">
+            <a class="btn danger" href="#">Delete history…</a>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label">Delete account
+            <span class="hint">Permanently removes account, runs, writeups, API keys. Irreversible.</span>
+          </label>
+          <div class="field-input">
+            <a class="btn danger" href="#">Delete account…</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="site">
+    <span>Example <span style="color: var(--text-faint);">·</span> agentic CTFs © 2026</span>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

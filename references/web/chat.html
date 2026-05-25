@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>agent-aesthetics — Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page wide">
+
+  <div class="top-row">
+    <span class="brand">Example <span class="dot">·</span> inbox</span>
+    <a class="signin" href="#">Sign out</a>
+  </div>
+
+  <h1 style="margin-bottom: var(--space-3);">Inbox</h1>
+  <p style="color: var(--text-muted); margin: 0 0 var(--space-5) 0;">Generic threaded messaging — works for support, social, internal team, or assistant flows.</p>
+
+  <div class="chat-shell">
+
+    <aside class="chat-list">
+      <div class="chat-list-header">
+        <span>Conversations</span>
+        <a href="#" style="font-size: 11px; color: var(--accent);">+ New</a>
+      </div>
+
+      <a class="chat-list-item active" href="#">
+        <div class="who">Mira Okafor</div>
+        <div class="preview">Yes, that change makes sense. Pushing now.</div>
+        <div class="meta"><span>2 min</span><span class="unread">●</span></div>
+      </a>
+
+      <a class="chat-list-item" href="#">
+        <div class="who">support@stripe</div>
+        <div class="preview">Your ticket #44912 has been resolved.</div>
+        <div class="meta"><span>1 h</span><span></span></div>
+      </a>
+
+      <a class="chat-list-item" href="#">
+        <div class="who">deploy-bot</div>
+        <div class="preview">Deploy to prod completed in 2m 14s.</div>
+        <div class="meta"><span>3 h</span><span></span></div>
+      </a>
+
+      <a class="chat-list-item" href="#">
+        <div class="who">Niko Petrov</div>
+        <div class="preview">Sent you the figma link this morning…</div>
+        <div class="meta"><span>yesterday</span><span></span></div>
+      </a>
+
+      <a class="chat-list-item" href="#">
+        <div class="who">#engineering</div>
+        <div class="preview">42 new messages</div>
+        <div class="meta"><span>yesterday</span><span class="unread">42</span></div>
+      </a>
+
+      <a class="chat-list-item" href="#">
+        <div class="who">Anna Liu</div>
+        <div class="preview">Thanks! I'll review tomorrow morning.</div>
+        <div class="meta"><span>2d</span><span></span></div>
+      </a>
+
+      <a class="chat-list-item" href="#">
+        <div class="who">birdhouse-agent</div>
+        <div class="preview">Run finished. 32-byte flag emitted at 14:33.</div>
+        <div class="meta"><span>3d</span><span></span></div>
+      </a>
+
+    </aside>
+
+    <section class="chat-thread">
+
+      <div class="chat-thread-header">
+        <div>
+          <div class="title">Mira Okafor</div>
+          <div class="sub">last active 2 minutes ago <span class="dot">·</span> <span class="t-str">●</span> online</div>
+        </div>
+        <div style="display: flex; gap: var(--space-2);">
+          <a class="btn secondary" href="#">Call</a>
+          <a class="btn secondary" href="#">Details</a>
+        </div>
+      </div>
+
+      <div class="chat-messages">
+
+        <div class="chat-msg system"><div class="body">Conversation started · May 24, 2026</div></div>
+
+        <div class="chat-msg assistant">
+          <div class="avatar">MO</div>
+          <div>
+            <div class="who">Mira Okafor <span class="ts">09:14</span></div>
+            <div class="body">
+              <p>Quick one — the timeline view is showing duration as a string, but the new sort code expects a number. Should I change the formatter or the comparator?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-msg user">
+          <div class="avatar">SE</div>
+          <div>
+            <div class="who">You <span class="ts">09:17</span></div>
+            <div class="body">
+              <p>Change the comparator. The formatted string is what we display, and we don't want to round-trip parse it just to sort.</p>
+              <p>Use the raw <code class="t-path">duration_ms</code> field from the API. It's there but we're not using it in the table.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-msg assistant">
+          <div class="avatar">MO</div>
+          <div>
+            <div class="who">Mira Okafor <span class="ts">09:22</span></div>
+            <div class="body">
+              <p>Got it. Here's what I'm planning:</p>
+              <div class="codeblock">
+                <div class="lang">TS</div>
+<pre><code><span class="t-kw">const</span> <span class="t-type">durationSort</span> = (a, b) =&gt;
+  a.<span class="t-path">duration_ms</span> - b.<span class="t-path">duration_ms</span>;</code></pre>
+              </div>
+              <p>And the formatter stays as <code class="t-path">formatDuration(row.duration_ms)</code>.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-msg user">
+          <div class="avatar">SE</div>
+          <div>
+            <div class="who">You <span class="ts">09:24</span></div>
+            <div class="body">
+              <p>Yep, that's right. Make sure timed-out rows (duration_ms = null) sort to the bottom in ascending and top in descending.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-msg assistant">
+          <div class="avatar">MO</div>
+          <div>
+            <div class="who">Mira Okafor <span class="ts">09:32</span></div>
+            <div class="body">
+              <p>Yes, that change makes sense. Pushing now.</p>
+              <div class="tool-call">
+                <div><span class="tool-name">git push</span> <span class="tool-arg">origin fix/timeline-sort-comparator</span></div>
+                <div style="color: var(--syn-str); margin-top: 2px;">→ pushed 1 commit · CI started</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chat-input">
+        <div class="chat-input-row">
+          <textarea placeholder="Write a message — Cmd+Enter to send..."></textarea>
+          <button class="btn">Send</button>
+        </div>
+        <div class="chat-meta-row">
+          <span>↵ send · ⇧↵ newline · @ mention · / commands</span>
+          <span class="grow"></span>
+          <span>encrypted</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer class="site">
+    <span>Example <span class="dot">·</span> messages © 2026</span>
+    <nav>
+      <a href="#">Settings</a>
+      <a href="#">Search</a>
+      <a href="#">Help</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agent Aesthetics — Reader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page">
+
+  <div class="top-row">
+    <span class="brand">Example <span style="color: var(--text-faint);">·</span> writeups</span>
+    <a class="signin" href="#">Sign in</a>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="#">Index</a><span class="sep">/</span>
+    <a href="#">Writeups</a><span class="sep">/</span>
+    <a href="#">DEF CON Quals 2026</a><span class="sep">/</span>
+    <span class="current">Birdhouse</span>
+  </nav>
+
+  <h1>Birdhouse — DEF CON Quals 2026</h1>
+  <div class="reader-meta">
+    <span>By <a href="#">steady-engine</a></span>
+    <span class="dot">·</span>
+    <span>Apr 6, 2026</span>
+    <span class="dot">·</span>
+    <span>12 min read</span>
+    <span class="dot">·</span>
+    <span><span class="tag">re</span><span class="tag">n64</span><span class="tag">microcode</span></span>
+  </div>
+
+  <div class="reader-grid">
+    <article class="reader-article">
+
+      <blockquote>"Build a house to my liking to receive the flag."</blockquote>
+
+      <p>In this challenge, we are given a tarball containing a single Nintendo 64 ROM. Let's start off by checking what we're dealing with.</p>
+
+      <div class="codeblock">
+        <div class="lang">BASH</div>
+<pre><code>$ <span class="t-kw">ls</span> -la birdhouse/
+-rw-r--r--  game-<span class="t-num">2e437bf8b96a6b58729ceb6c0f09421de505ff8d8f73c1f037557f2289680328</span>.tar.gz
+-rw-r--r--  game.z64
+
+$ <span class="t-kw">file</span> game.z64
+game.z64: data
+
+$ <span class="t-kw">xxd</span> -s <span class="t-num">0x20</span> -l <span class="t-num">32</span> game.z64
+00000020: 4354 4620 426c 6f63 6b20 4761 6d65 0000  CTF Block Game..</code></pre>
+      </div>
+
+      <p>A big-endian <code class="t-path">.z64</code> ROM with the title "CTF Block Game" baked into the header. Standard libdragon homebrew layout — the cart magic <code class="t-num">80 37 12 40</code> is at offset 0, and bytes <code class="t-num">0x20</code>–<code class="t-num">0x33</code> hold the title.</p>
+
+      <h2 id="rom-layout">Reading the ROM layout</h2>
+
+      <p>Libdragon uses a "ROMpak" — a small TOC immediately after the IPL3 boot stub that names each section of the cart. The TOC is at file offset <code class="t-num">0x1930</code>:</p>
+
+      <div class="codeblock">
+        <div class="lang">JSON</div>
+<pre><code>{
+  <span class="t-str">"branch"</span>: <span class="t-str">"preview"</span>,
+  <span class="t-str">"hash"</span>: <span class="t-str">"3c1f25a3ee7c1c4a76e37156764226a499af3653"</span>,
+  <span class="t-str">"commit-date"</span>: <span class="t-str">"2026-04-06"</span>,
+  <span class="t-str">"dirty"</span>: <span class="t-kw">true</span>
+}</code></pre>
+      </div>
+
+      <p>The <code class="t-str">"dirty": true</code> is interesting — the libdragon preview tree has been locally modified. That's where the challenge logic lives. Let's pull the <code class="t-kw">code</code> section out.</p>
+
+      <h2 id="booting">Booting it</h2>
+
+      <p>mupen64plus won't run libdragon-preview homebrew — the game ships custom RSP microcode (<code class="t-type">rsp_tiny3d_clipping</code>) and calls <code class="t-kw">check_emulation()</code> early, which aborts on emulators missing MI repeat mode. The clean path is <code class="t-kw">ares</code>, which is cycle-accurate enough and bundles a GDB Remote Serial Protocol stub.</p>
+
+      <h3 id="dialogue">Pulling the dialogue from RAM</h3>
+
+      <p>The strings in the binary are partly compressed by libdragon's <code class="t-type">n64sym</code> dedup scheme. Easiest path: dump the dynamic strings region from a running game and look at what stages the critic walks through.</p>
+
+      <ol>
+        <li>Begin with a tasteful foundation.</li>
+        <li>The proportions are nearly acceptable.</li>
+        <li>Charming, in the way a shed can be charming.</li>
+        <li>I want rustic elegance, not municipal storage annex.</li>
+      </ol>
+
+      <p>Six dialogue stages plus the opener. The block name table sits just after:</p>
+
+      <ul>
+        <li><code class="t-type">Air</code>, <code class="t-type">Grass</code>, <code class="t-type">Dirt</code>, <code class="t-type">Stone</code>, <code class="t-type">Wood</code>, <code class="t-type">Leaves</code>, <code class="t-type">Sand</code>, <code class="t-type">Brick</code></li>
+      </ul>
+
+      <p>Eight block IDs — <code class="t-type">Air=0</code> is the default for an empty cell.</p>
+
+      <h2 id="csp">Solving the CSP</h2>
+
+      <p>The constraint table at <code class="t-num">0x80057CA0</code> defines a CSP over <span class="t-num">933</span> variables, each in <span class="t-num">{1..7}</span>. Brute-forcing the 7-tuple of reference positions over <code class="t-num">7^7 = 823,543</code> assignments yields exactly one consistent assignment:</p>
+
+      <table class="data">
+        <thead><tr><th>Position</th><th>X, Y, Z</th><th>Block</th></tr></thead>
+        <tbody>
+          <tr><td>0x2852</td><td>20, 2, 18</td><td>2 → Dirt</td></tr>
+          <tr><td>0x2A53</td><td>21, 2, 19</td><td>6 → Sand</td></tr>
+          <tr><td>0x2C49</td><td>22, 2,  9</td><td>3 → Stone</td></tr>
+          <tr><td>0x32C7</td><td>25, 6,  7</td><td>4 → Wood</td></tr>
+          <tr><td>0x3656</td><td>27, 2, 22</td><td>1 → Grass</td></tr>
+          <tr><td>0x386C</td><td>28, 3, 12</td><td>7 → Brick</td></tr>
+          <tr><td>0x398D</td><td>28,12, 13</td><td>5 → Leaves</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2 id="recap">Recap</h2>
+
+      <p>The whole challenge is one big graph-coloring CSP solved in <span class="t-num">512</span> bytes of RSP microcode. The theme — <span class="t-str">r5p_gr4ph_c0l0r_0n_n64</span> — tells you exactly what category of problem you've just solved.</p>
+
+      <p><strong>Final flag:</strong></p>
+      <div class="codeblock">
+        <div class="lang">FLAG</div>
+<pre><code><span class="t-str">bbb{r5p_gr4ph_c0l0r_0n_n64}</span></code></pre>
+      </div>
+
+    </article>
+
+    <aside class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#rom-layout">Reading the ROM layout</a></li>
+        <li><a href="#booting">Booting it</a></li>
+        <li class="active"><a href="#dialogue">Pulling dialogue from RAM</a></li>
+        <li><a href="#csp">Solving the CSP</a></li>
+        <li><a href="#recap">Recap</a></li>
+      </ol>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <span>Example <span style="color: var(--text-faint);">·</span> writeups © 2026</span>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

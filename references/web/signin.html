@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>agent-aesthetics — Sign in</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <h1>Sign in</h1>
+    <p class="sub">Welcome back to <span style="color: var(--text); font-family: var(--mono);">Example</span></p>
+
+    <form class="auth-form" onsubmit="event.preventDefault();">
+      <label class="row">
+        Email
+        <input type="email" placeholder="you@example.com" value="">
+      </label>
+      <label class="row">
+        Password
+        <input type="password" placeholder="•••••••••">
+      </label>
+      <div class="row-row">
+        <label style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted);">
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+
+    <div class="auth-divider">or continue with</div>
+
+    <div class="auth-oauth">
+      <a class="btn secondary" href="#" style="text-align: center;">GitHub</a>
+      <a class="btn secondary" href="#" style="text-align: center;">Google</a>
+      <a class="btn secondary" href="#" style="text-align: center;">SSO / SAML</a>
+    </div>
+
+    <div class="auth-foot">
+      Don't have an account? <a href="#">Create one</a>
+    </div>
+  </div>
+
+  <div style="font-size: 11px; color: var(--text-faint); margin-top: var(--space-5); font-family: var(--mono);">
+    By signing in you agree to the <a href="#" style="color: var(--text-muted);">terms</a> and <a href="#" style="color: var(--text-muted);">privacy policy</a>.
+  </div>
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

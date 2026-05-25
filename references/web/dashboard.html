@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agent Aesthetics — Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page wide">
+
+  <div class="top-row">
+    <span class="brand">Example <span class="dot">·</span> agents</span>
+    <a class="signin" href="#">Sign in</a>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="#">Index</a><span class="sep">/</span>
+    <span class="current">Dashboard</span>
+  </nav>
+
+  <h1>Overview</h1>
+  <p style="color: var(--text-muted); margin: 0 0 var(--space-5) 0;">Agents <span style="color: var(--text-faint);">·</span> Last 7 days <span style="color: var(--text-faint);">·</span> updated <code class="t-num">14:33:21</code></p>
+
+  <div class="filter-bar">
+    <label>Status:
+      <select>
+        <option>All</option><option>Completed</option><option>Errored</option><option>Timed out</option>
+      </select>
+    </label>
+    <label>Model:
+      <select>
+        <option>All</option><option>codex</option><option>claude-opus-4.7</option><option>gpt-5.4</option>
+      </select>
+    </label>
+    <label>Date range:
+      <select>
+        <option>Last 7 days</option><option>Last 30 days</option><option>This quarter</option>
+      </select>
+    </label>
+    <span class="spacer" style="flex:1"></span>
+    <a class="btn secondary" href="#">Export CSV</a>
+    <a class="btn" href="#">+ New run</a>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-label">Total runs</div>
+      <div class="kpi-value">1,247</div>
+      <div class="kpi-delta up">↑ 12.3% vs prev 7d</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Success rate</div>
+      <div class="kpi-value">89.2%</div>
+      <div class="kpi-delta up">↑ 2.1pp</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Avg cost / run</div>
+      <div class="kpi-value">$0.41</div>
+      <div class="kpi-delta down">↓ 8.4%</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">P50 duration</div>
+      <div class="kpi-value">4m 23s</div>
+      <div class="kpi-delta flat">→ no change</div>
+    </div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="card">
+      <div class="card-title"><span>Daily runs</span><span class="meta">total 1,247</span></div>
+      <div class="bars">
+        <div class="bar" style="height: 56%;"><span class="val">142</span></div>
+        <div class="bar" style="height: 68%;"><span class="val">168</span></div>
+        <div class="bar" style="height: 47%;"><span class="val">119</span></div>
+        <div class="bar" style="height: 82%;"><span class="val">204</span></div>
+        <div class="bar" style="height: 71%;"><span class="val">178</span></div>
+        <div class="bar dim" style="height: 38%;"><span class="val">96</span></div>
+        <div class="bar dim" style="height: 56%;"><span class="val">140</span></div>
+      </div>
+      <div class="bar-labels">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span>Status breakdown</span><span class="meta">7d</span></div>
+      <div class="status-list">
+        <div class="status-row"><span class="dot ok"></span><span class="label">Completed</span><span class="count">1,112</span><span class="pct">89.2%</span></div>
+        <div class="status-row"><span class="dot err"></span><span class="label">Errored</span><span class="count">89</span><span class="pct">7.1%</span></div>
+        <div class="status-row"><span class="dot warn"></span><span class="label">Partial</span><span class="count">28</span><span class="pct">2.2%</span></div>
+        <div class="status-row"><span class="dot timeout"></span><span class="label">Timed out</span><span class="count">18</span><span class="pct">1.4%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Recent activity</h2>
+  <div class="data-scroll">
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Started</th><th>Agent</th><th>Model</th><th>Status</th><th>Duration</th><th>Cost</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>14:33:21</td><td><a href="index.html">steady-engine-0859</a></td><td>codex</td><td><span class="pill ok">completed</span></td><td>00:07:21</td><td>$0.278946</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>14:21:04</td><td><a href="index.html">copper-snail-0123</a></td><td>claude-opus-4.7</td><td><span class="pill ok">completed</span></td><td>00:12:47</td><td>$0.612301</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>14:19:50</td><td><a href="index.html">muted-fern-7714</a></td><td>codex</td><td><span class="pill err">errored</span></td><td>00:02:13</td><td>$0.071210</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>14:08:31</td><td><a href="index.html">dusty-relay-0042</a></td><td>codex</td><td><span class="pill warn">partial</span></td><td>00:09:55</td><td>$0.395019</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>13:55:17</td><td><a href="index.html">opal-cycle-2519</a></td><td>gpt-5.4-nano</td><td><span class="pill ok">completed</span></td><td>00:04:30</td><td>$0.118437</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>13:48:02</td><td><a href="index.html">quiet-ledger-9181</a></td><td>claude-opus-4.7</td><td><span class="pill timeout">timed out</span></td><td>00:15:00</td><td>$0.881772</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>13:30:44</td><td><a href="index.html">amber-glyph-3344</a></td><td>codex</td><td><span class="pill ok">completed</span></td><td>00:06:18</td><td>$0.241003</td><td><a href="index.html">view →</a></td></tr>
+      <tr><td>13:11:09</td><td><a href="index.html">north-cipher-0808</a></td><td>codex</td><td><span class="pill ok">completed</span></td><td>00:05:51</td><td>$0.219760</td><td><a href="index.html">view →</a></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <footer class="site">
+    <span>Example <span class="dot">·</span> agentic CTFs © 2026</span>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

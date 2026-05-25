@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>agent-aesthetics — Components</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page">
+
+  <div class="top-row">
+    <span class="brand">Example <span class="dot">·</span> components</span>
+    <a class="signin" href="signin.html">Sign in</a>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Index</a><span class="sep">/</span>
+    <span class="current">Components</span>
+  </nav>
+
+  <h1>Components</h1>
+  <p style="color: var(--text-muted); margin: 0 0 var(--space-6) 0;">Atomic UI building blocks. Every element pulls colors from palette tokens — swap palette to re-skin.</p>
+
+  <div class="settings-grid">
+
+    <nav class="settings-nav">
+      <a href="#buttons" class="active">Buttons</a>
+      <a href="#inputs">Form inputs</a>
+      <a href="#selection">Selection</a>
+      <a href="#tags">Tags &amp; badges</a>
+      <a href="#alerts">Alerts</a>
+      <a href="#toasts">Toasts</a>
+      <a href="#avatars">Avatars</a>
+      <a href="#progress">Progress</a>
+      <a href="#cards">Cards</a>
+      <a href="#modal">Modal</a>
+      <a href="#tabs">Tabs</a>
+      <a href="#accordion">Accordion</a>
+      <a href="#breadcrumb">Breadcrumbs</a>
+      <a href="#pagination">Pagination</a>
+      <a href="#tooltip">Tooltip</a>
+      <a href="#kbd">Keyboard</a>
+      <a href="#code">Code</a>
+      <a href="#table">Tables</a>
+    </nav>
+
+    <div>
+
+      <section id="buttons" class="cat-section">
+        <h2>Buttons</h2>
+        <p class="desc">Primary action uses the accent fill. Secondary is outlined. Danger is muted by default and turns red on hover.</p>
+        <div class="cat-grid"><div class="label-cell">Variants</div><div class="demo-cell">
+          <a class="btn" href="#">Primary</a>
+          <a class="btn secondary" href="#">Secondary</a>
+          <a class="btn danger" href="#">Danger</a>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">With icon</div><div class="demo-cell">
+          <a class="btn" href="#">+ Create</a>
+          <a class="btn secondary" href="#">↗ Open</a>
+          <a class="btn secondary" href="#">↓ Download</a>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Disabled</div><div class="demo-cell">
+          <a class="btn disabled" href="#">Primary</a>
+          <a class="btn secondary disabled" href="#">Secondary</a>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Group</div><div class="demo-cell">
+          <span class="pagination" style="font-family: var(--sans); font-size: 13px;">
+            <a href="#">Day</a><a href="#" class="current" style="background: var(--accent);">Week</a><a href="#">Month</a><a href="#">Year</a>
+          </span>
+        </div></div>
+      </section>
+
+      <section id="inputs" class="cat-section">
+        <h2>Form inputs</h2>
+        <p class="desc">Native browser controls left mostly alone — borders, padding, accent on focus, no fancy chrome.</p>
+        <div class="cat-grid"><div class="label-cell">Text</div><div class="demo-cell">
+          <input type="text" placeholder="Display name" style="width: 240px;">
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Email</div><div class="demo-cell">
+          <input type="email" value="user@example.com" style="width: 240px;">
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Password</div><div class="demo-cell">
+          <input type="password" placeholder="••••••••" style="width: 240px;">
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Search</div><div class="demo-cell">
+          <input type="search" placeholder="Search runs, agents, files…" style="width: 320px;">
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Number</div><div class="demo-cell">
+          <input type="number" value="42" style="width: 120px;">
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Select</div><div class="demo-cell">
+          <select style="width: 200px;">
+            <option>codex</option>
+            <option>claude-opus-4.7</option>
+            <option>claude-sonnet-4.6</option>
+          </select>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Textarea</div><div class="demo-cell" style="display: block;">
+          <textarea rows="3" style="max-width: 520px;">Multi-line plain text. Uses the mono font by default since most agent contexts deal with code, paths, logs.</textarea>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">File upload</div><div class="demo-cell">
+          <input type="file">
+        </div></div>
+      </section>
+
+      <section id="selection" class="cat-section">
+        <h2>Selection controls</h2>
+        <p class="desc">Checkboxes and radios use accent-color for native styling. Toggle is a small CSS pseudo-element.</p>
+        <div class="cat-grid"><div class="label-cell">Checkbox</div><div class="demo-cell" style="display: block;">
+          <label style="display: block;"><input type="checkbox" checked> Send weekly digest</label>
+          <label style="display: block;"><input type="checkbox"> Show raw token usage</label>
+          <label style="display: block;"><input type="checkbox" disabled> Disabled option</label>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Radio</div><div class="demo-cell" style="display: block;">
+          <label style="display: block;"><input type="radio" name="vis" checked> Public</label>
+          <label style="display: block;"><input type="radio" name="vis"> Unlisted</label>
+          <label style="display: block;"><input type="radio" name="vis"> Private</label>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Toggle</div><div class="demo-cell">
+          <label><input type="checkbox" class="toggle" checked> Autosave</label>
+          <label><input type="checkbox" class="toggle"> Notifications</label>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Range</div><div class="demo-cell">
+          <input type="range" min="0" max="100" value="62">
+          <span style="font-family: var(--mono); font-size: 12px; color: var(--text-muted);">62</span>
+        </div></div>
+      </section>
+
+      <section id="tags" class="cat-section">
+        <h2>Tags &amp; badges</h2>
+        <p class="desc">Tags are inline labels. Pills are status indicators (used in tables). Badges are small counters.</p>
+        <div class="cat-grid"><div class="label-cell">Tags</div><div class="demo-cell">
+          <span class="tag">re</span>
+          <span class="tag">n64</span>
+          <span class="tag">microcode</span>
+          <span class="tag">writeup</span>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Pills (status)</div><div class="demo-cell">
+          <span class="pill ok">completed</span>
+          <span class="pill err">errored</span>
+          <span class="pill warn">partial</span>
+          <span class="pill timeout">timed out</span>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Badges (count)</div><div class="demo-cell">
+          <span>Inbox <span class="badge">12</span></span>
+          <span>Updates <span class="badge muted">3</span></span>
+          <span>Drafts <span class="badge muted">99+</span></span>
+        </div></div>
+      </section>
+
+      <section id="alerts" class="cat-section">
+        <h2>Alerts</h2>
+        <p class="desc">Inline notifications with a colored left rule. Four severities — info, success, warning, error.</p>
+        <div class="cat-grid"><div class="label-cell">Info</div><div class="demo-cell">
+          <div class="alert info">
+            <span class="alert-mark">i</span>
+            <div><p class="alert-title">Heads up</p><p class="alert-body">Maintenance is scheduled for Saturday 02:00 UTC.</p></div>
+          </div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Success</div><div class="demo-cell">
+          <div class="alert success">
+            <span class="alert-mark">✓</span>
+            <div><p class="alert-title">Saved</p><p class="alert-body">Profile updated. New display name will appear on future runs.</p></div>
+          </div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Warning</div><div class="demo-cell">
+          <div class="alert warn">
+            <span class="alert-mark">!</span>
+            <div><p class="alert-title">Approaching limit</p><p class="alert-body">You've used 87% of your monthly token allowance.</p></div>
+          </div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Error</div><div class="demo-cell">
+          <div class="alert error">
+            <span class="alert-mark">×</span>
+            <div><p class="alert-title">Run failed</p><p class="alert-body">The agent exited with code 137 (OOM). Increase memory or shorten context.</p></div>
+          </div>
+        </div></div>
+      </section>
+
+      <section id="toasts" class="cat-section">
+        <h2>Toasts</h2>
+        <p class="desc">Transient notification — typically appears in a corner and dismisses on its own. Shown stationary here.</p>
+        <div class="cat-grid"><div class="label-cell">Variants</div><div class="demo-cell" style="display: block;">
+          <div style="display: grid; gap: var(--space-2); max-width: 360px;">
+            <div class="toast"><span class="icon">✓</span><span>Run started · steady-engine-0859</span><span class="close" style="margin-left: auto;">×</span></div>
+            <div class="toast"><span class="icon" style="color: var(--syn-num);">!</span><span>Connection unstable — retrying…</span><span class="close" style="margin-left: auto;">×</span></div>
+            <div class="toast"><span class="icon" style="color: var(--syn-type);">i</span><span>3 new updates available</span><span class="close" style="margin-left: auto;">×</span></div>
+          </div>
+        </div></div>
+      </section>
+
+      <section id="avatars" class="cat-section">
+        <h2>Avatars</h2>
+        <p class="desc">Initials by default — image avatars optional. Stack for collaborators.</p>
+        <div class="cat-grid"><div class="label-cell">Sizes</div><div class="demo-cell">
+          <span class="avatar-sm">SE</span>
+          <span class="avatar-md">SE</span>
+          <span class="avatar-lg">SE</span>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Accent</div><div class="demo-cell">
+          <span class="avatar-md accent">YO</span>
+          <span class="avatar-lg accent">A</span>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Stack</div><div class="demo-cell">
+          <span class="avatar-stack">
+            <span class="avatar-md accent">MO</span>
+            <span class="avatar-md">NP</span>
+            <span class="avatar-md">AL</span>
+            <span class="avatar-md" style="background: var(--text-muted); color: var(--bg);">+3</span>
+          </span>
+        </div></div>
+      </section>
+
+      <section id="progress" class="cat-section">
+        <h2>Progress</h2>
+        <p class="desc">Thin, default, large; determinate fills via inline width, indeterminate animates.</p>
+        <div class="cat-grid"><div class="label-cell">Thin (62%)</div><div class="demo-cell">
+          <div class="progress thin"><div class="bar" style="width: 62%;"></div></div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Default (38%)</div><div class="demo-cell">
+          <div class="progress"><div class="bar" style="width: 38%;"></div></div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Large (91%)</div><div class="demo-cell">
+          <div class="progress lg"><div class="bar" style="width: 91%;"></div></div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Indeterminate</div><div class="demo-cell">
+          <div class="progress indeterminate"><div class="bar"></div></div>
+        </div></div>
+      </section>
+
+      <section id="cards" class="cat-section">
+        <h2>Cards</h2>
+        <p class="desc">Bordered containers with optional title row. Used throughout for grouping.</p>
+        <div class="cat-grid"><div class="label-cell">Basic</div><div class="demo-cell" style="display: block;">
+          <div class="card" style="max-width: 360px;">
+            <div class="card-title"><span>Card title</span><span class="meta">aside</span></div>
+            <p style="margin: 0; color: var(--text-muted);">Card body content. Used for grouping related metrics, summaries, or controls inside a page.</p>
+          </div>
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Hub card</div><div class="demo-cell" style="display: block;">
+          <a class="hub-card" href="#" style="max-width: 360px;">
+            <h3>Linked card</h3>
+            <p>Clickable card pattern from the hub index. Hover changes background.</p>
+          </a>
+        </div></div>
+      </section>
+
+      <section id="modal" class="cat-section">
+        <h2>Modal</h2>
+        <p class="desc">Centered surface above page. Shown inline here for demonstration.</p>
+        <div class="modal-mock">
+          <div class="modal-head">
+            <h3>Revoke API key?</h3>
+            <span class="x">×</span>
+          </div>
+          <div class="modal-body">
+            <p style="margin: 0;">The token <code class="t-path">aa_••••••••••a7c1</code> will stop working immediately. Any script or CI job using it will fail.</p>
+          </div>
+          <div class="modal-foot">
+            <a class="btn secondary" href="#">Cancel</a>
+            <a class="btn danger" href="#">Revoke key</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabs" class="cat-section">
+        <h2>Tabs</h2>
+        <p class="desc">Bottom-underline indicator on the active tab. Standalone or inside cards.</p>
+        <div class="tabs">
+          <a class="active" href="#">Overview</a>
+          <a href="#">Activity</a>
+          <a href="#">Members</a>
+          <a href="#">Files</a>
+          <a href="#">Settings</a>
+        </div>
+        <div style="padding: var(--space-4) 0; color: var(--text-muted); font-size: 14px;">Content for the active tab goes here.</div>
+      </section>
+
+      <section id="accordion" class="cat-section">
+        <h2>Accordion</h2>
+        <p class="desc">Native <code class="t-path">&lt;details&gt;</code> with custom summary styling — no JS.</p>
+        <details class="accordion" open>
+          <summary>What is agent-aesthetics?</summary>
+          <div class="body">A personal soft-brutalist-document reference for projects vibe-coded with LLM agents. The kit includes design tokens, prose rules, and reference pages.</div>
+        </details>
+        <details class="accordion">
+          <summary>Why magenta?</summary>
+          <div class="body">Accent color picked from a comparison of palettes — magenta carries identity without leaning warm, and the syntax palette harmonizes around it.</div>
+        </details>
+        <details class="accordion">
+          <summary>Can I use other palettes?</summary>
+          <div class="body">Use the top palette row to switch — your choice persists across pages.</div>
+        </details>
+      </section>
+
+      <section id="breadcrumb" class="cat-section">
+        <h2>Breadcrumbs</h2>
+        <p class="desc">Trail of links separated by thin slashes. Current page is unlinked, others use accent.</p>
+        <nav class="breadcrumb" style="margin: 0;">
+          <a href="index.html">Index</a><span class="sep">/</span>
+          <a href="#">Writeups</a><span class="sep">/</span>
+          <a href="#">DEF CON 2026</a><span class="sep">/</span>
+          <span class="current">Birdhouse</span>
+        </nav>
+      </section>
+
+      <section id="pagination" class="cat-section">
+        <h2>Pagination</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+          <span class="pagination">
+            <span class="disabled">‹ Prev</span>
+            <span class="current">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">Next ›</a>
+          </span>
+          <span class="pagination">
+            <a href="#">‹</a>
+            <a href="#">1</a>
+            <span style="color: var(--text-faint);">…</span>
+            <a href="#">8</a>
+            <span class="current">9</span>
+            <a href="#">10</a>
+            <span style="color: var(--text-faint);">…</span>
+            <a href="#">42</a>
+            <a href="#">›</a>
+          </span>
+        </div>
+      </section>
+
+      <section id="tooltip" class="cat-section">
+        <h2>Tooltip</h2>
+        <p class="desc">CSS-only — hover the term to see the tooltip.</p>
+        <p style="color: var(--text);">The agent emitted <span class="tip" data-tip="completion + cache + tool tokens">3,287 tokens</span> at <span class="tip" data-tip="p50: 142ms · p95: 384ms · p99: 712ms">14:33:21</span>.</p>
+      </section>
+
+      <section id="kbd" class="cat-section">
+        <h2>Keyboard hints</h2>
+        <p class="desc">Use <kbd>kbd</kbd> for keyboard shortcuts in help text and hints.</p>
+        <p>Press <kbd>Cmd</kbd>+<kbd>K</kbd> to open the command palette. Press <kbd>Esc</kbd> to close. <kbd>↑</kbd>/<kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select.</p>
+      </section>
+
+      <section id="code" class="cat-section">
+        <h2>Code</h2>
+        <p class="desc">Inline code and code blocks. Syntax tokens are semantic, not just highlighting.</p>
+        <div class="cat-grid"><div class="label-cell">Inline</div><div class="demo-cell" style="display: block; font-size: 14px;">
+          Run with <code>--verbose</code> to see paths like <code class="t-path">/work/example/</code> and addresses like <code class="t-num">0x4012a0</code>. Use <code class="t-kw">await</code> in async contexts. The return type is <code class="t-type">Promise&lt;Result&gt;</code>.
+        </div></div>
+        <div class="cat-grid"><div class="label-cell">Block</div><div class="demo-cell" style="display: block;">
+          <div class="codeblock" style="width: 100%;">
+            <div class="lang">TS</div>
+<pre><code><span class="t-kw">export async function</span> <span class="t-type">fetchRun</span>(id: <span class="t-type">string</span>): <span class="t-kw">Promise</span>&lt;<span class="t-type">Run</span>&gt; {
+  <span class="t-kw">const</span> r = <span class="t-kw">await</span> fetch(<span class="t-str">`/api/runs/${id}`</span>);
+  <span class="t-kw">if</span> (!r.ok) <span class="t-kw">throw new</span> <span class="t-type">RunError</span>(<span class="t-str">'fetch failed'</span>);
+  <span class="t-kw">return</span> r.json();
+}</code></pre>
+          </div>
+        </div></div>
+      </section>
+
+      <section id="table" class="cat-section">
+        <h2>Tables</h2>
+        <p class="desc">Mono font for numeric / id columns. Hover row gets a background tint.</p>
+        <div class="data-scroll">
+          <table class="data">
+            <thead>
+              <tr><th>Started</th><th>Agent</th><th>Status</th><th>Cost</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>14:33:21</td><td>steady-engine</td><td><span class="pill ok">completed</span></td><td>$0.278946</td></tr>
+              <tr><td>14:21:04</td><td>copper-snail</td><td><span class="pill ok">completed</span></td><td>$0.612301</td></tr>
+              <tr><td>14:19:50</td><td>muted-fern</td><td><span class="pill err">errored</span></td><td>$0.071210</td></tr>
+              <tr><td>14:08:31</td><td>dusty-relay</td><td><span class="pill warn">partial</span></td><td>$0.395019</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="site">
+    <span>Example <span class="dot">·</span> components © 2026</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">Tokens</a>
+      <a href="#">Source</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>

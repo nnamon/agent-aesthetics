@@ -1,0 +1,4 @@
+.playwright-cli/
+references/web/screenshots/
+.DS_Store
+*.swp

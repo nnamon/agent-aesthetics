@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agent Aesthetics — Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="palette-m2">
+
+<nav class="topbar" id="topbar"></nav>
+
+<div class="page">
+
+  <div class="top-row">
+    <span class="brand">Birdhouse <span style="color: var(--text-faint);">·</span> save slot 3</span>
+    <a class="signin" href="#">Pause</a>
+  </div>
+
+  <nav class="breadcrumb">
+    <a href="#">Catalog</a><span class="sep">/</span>
+    <a href="#">Adventures</a><span class="sep">/</span>
+    <span class="current">Birdhouse: the workshop</span>
+  </nav>
+
+  <div class="game-frame">
+
+    <dl class="game-hud">
+      <div class="hud-cell">
+        <dt>Location</dt>
+        <dd>The Workshop</dd>
+      </div>
+      <div class="hud-cell">
+        <dt>Turn</dt>
+        <dd>0042</dd>
+      </div>
+      <div class="hud-cell">
+        <dt>Score</dt>
+        <dd>1,337</dd>
+      </div>
+      <div class="hud-cell">
+        <dt>Health</dt>
+        <dd>18 / 20</dd>
+      </div>
+      <div class="hud-cell">
+        <dt>Taste</dt>
+        <dd class="danger">37</dd>
+      </div>
+    </dl>
+
+    <div class="game-main">
+
+      <div class="game-scene">
+        <h2>The Workshop</h2>
+        <div class="scene-prose">
+          <p>You stand in a low-ceilinged workshop. The far wall is dominated by a workbench scattered with chisels, planes, and half-finished tenons. A rough wooden door stands to the <span class="t-kw">north</span>, and a narrow staircase descends into shadow at the <span class="t-kw">south</span>.</p>
+          <p>A small <span class="t-type">brass key</span> glints on the workbench, half-buried under wood shavings. A folded <span class="t-type">note</span> rests beside it.</p>
+          <p>The critic's voice drifts up from somewhere below: <em>"Begin with a tasteful foundation."</em></p>
+        </div>
+        <div class="exits">
+          <ul>
+            <li><span class="dir">↑</span> N — through the door</li>
+            <li><span class="dir">↓</span> S — descending staircase</li>
+            <li><span class="dir">→</span> <span class="locked">E — locked (needs key)</span></li>
+            <li><span class="dir">←</span> <span class="locked">W — boarded shut</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="game-side">
+        <div>
+          <h3>Inventory</h3>
+          <ul>
+            <li>1× <span class="t-type">lantern</span> <span class="muted">(lit, 38 turns)</span></li>
+            <li>3× iron coins</li>
+            <li>1× <span class="t-type">folded note</span></li>
+            <li>—</li>
+            <li class="muted">3 slots free</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Map</h3>
+<pre class="map">       ┌───┐
+       │ ? │
+   ┌───┤   ├───┐
+   │ X │ * │ X │
+   └───┤   ├───┘
+       │ ? │
+       └───┘</pre>
+        </div>
+
+        <div>
+          <h3>Stats</h3>
+          <dl class="stats">
+            <dt>STR</dt><dd>12</dd>
+            <dt>DEX</dt><dd>14</dd>
+            <dt>INT</dt><dd>16</dd>
+            <dt>LCK</dt><dd>09</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="game-log">
+      <h3>Log</h3>
+      <ol class="log">
+        <li class="user">look at workbench</li>
+        <li class="sys">You see chisels, planes, and a brass key.</li>
+        <li class="user">read note</li>
+        <li class="sys">"To pass the critic: lay a tasteful foundation. Sand at the boundary, dirt within."</li>
+        <li class="user">take key</li>
+        <li class="event">You pocket the brass key. +5 score</li>
+        <li class="user">go east</li>
+        <li class="error">The door is locked. You'll need the right key in the right hand.</li>
+      </ol>
+      <div class="command-row">
+        <span class="prompt">&gt;</span>
+        <input type="text" placeholder="type a command — look, take, go, use, drop…">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="game-actions">
+    <a class="btn" href="#">Save</a>
+    <a class="btn secondary" href="#">Inventory</a>
+    <a class="btn secondary" href="#">Map</a>
+    <a class="btn secondary" href="#">Hint</a>
+    <span class="grow"></span>
+    <a class="btn danger" href="#">Quit</a>
+  </div>
+
+  <footer class="site">
+    <span>Birdhouse <span style="color: var(--text-faint);">·</span> save slot 3 <span style="color: var(--text-faint);">·</span> autosave at turn 0040</span>
+    <nav>
+      <a href="#">Reset</a>
+      <a href="#">Export</a>
+      <a href="#">Help</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script src="assets/switcher.js"></script>
+</body>
+</html>
