@@ -1,0 +1,70 @@
+{
+  "$schema": "agent-aesthetics palette tokens",
+  "primary": "m2",
+  "primaryDark": "m2d",
+  "tokenNames": [
+    "bg", "bg-2", "bg-3",
+    "rule", "rule-strong",
+    "text", "text-muted", "text-faint",
+    "accent", "accent-hover",
+    "chrome-bg", "chrome-fg",
+    "syn-path", "syn-num", "syn-str", "syn-kw", "syn-type", "syn-comment",
+    "syn-bg"
+  ],
+  "palettes": {
+    "m2": {
+      "name": "M2 Magenta",
+      "mode": "light",
+      "primary": true,
+      "tokens": {
+        "bg": "#F3F4F6", "bg-2": "#E5E7EB", "bg-3": "#D1D5DB",
+        "rule": "#9CA3AF", "rule-strong": "#6B7280",
+        "text": "#111827", "text-muted": "#4B5563", "text-faint": "#9CA3AF",
+        "accent": "#DB2777", "accent-hover": "#BE185D",
+        "chrome-bg": "#111827", "chrome-fg": "#F3F4F6",
+        "syn-path": "#DB2777", "syn-num": "#A16207", "syn-str": "#0E7490",
+        "syn-kw": "#5B21B6", "syn-type": "#BE123C", "syn-comment": "#9CA3AF",
+        "syn-bg": "#E5E7EB"
+      }
+    },
+    "m2d": {
+      "name": "M2 Magenta",
+      "mode": "dark",
+      "primary": true,
+      "tokens": {
+        "bg": "#0F1117", "bg-2": "#1A1D26", "bg-3": "#262A35",
+        "rule": "#2D3340", "rule-strong": "#4A5060",
+        "text": "#E8EAED", "text-muted": "#9AA0AB", "text-faint": "#6B7280",
+        "accent": "#EC4899", "accent-hover": "#F472B6",
+        "chrome-bg": "#1A1D26", "chrome-fg": "#E8EAED",
+        "syn-path": "#EC4899", "syn-num": "#F59E0B", "syn-str": "#22D3EE",
+        "syn-kw": "#A78BFA", "syn-type": "#FB7185", "syn-comment": "#6B7280",
+        "syn-bg": "#16181F"
+      }
+    },
+    "s1":  { "name": "S1 Sky",     "mode": "light", "tokens": { "bg": "#F2F5F8", "bg-2": "#E2E8F0", "bg-3": "#CBD5E1", "rule": "#94A3B8", "rule-strong": "#64748B", "text": "#0F172A", "text-muted": "#475569", "text-faint": "#94A3B8", "accent": "#0284C7", "accent-hover": "#0369A1", "chrome-bg": "#0F172A", "chrome-fg": "#F2F5F8", "syn-path": "#0284C7", "syn-num": "#A16207", "syn-str": "#15803D", "syn-kw": "#6D28D9", "syn-type": "#0F766E", "syn-comment": "#94A3B8", "syn-bg": "#E2E8F0" } },
+    "s1d": { "name": "S1 Sky",     "mode": "dark",  "tokens": { "bg": "#0B1220", "bg-2": "#161E2E", "bg-3": "#232D40", "rule": "#2D384C", "rule-strong": "#4D5868", "text": "#E8EFFA", "text-muted": "#94A3B8", "text-faint": "#64748B", "accent": "#38BDF8", "accent-hover": "#7DD3FC", "chrome-bg": "#161E2E", "chrome-fg": "#E8EFFA", "syn-path": "#38BDF8", "syn-num": "#FBBF24", "syn-str": "#4ADE80", "syn-kw": "#C084FC", "syn-type": "#2DD4BF", "syn-comment": "#64748B", "syn-bg": "#0E1828" } },
+    "s2":  { "name": "S2 Indigo",  "mode": "light", "tokens": { "bg": "#F2F4F8", "bg-2": "#E4E8F0", "bg-3": "#CFD5E1", "rule": "#94A3B8", "rule-strong": "#64748B", "text": "#0F172A", "text-muted": "#475569", "text-faint": "#94A3B8", "accent": "#4338CA", "accent-hover": "#3730A3", "chrome-bg": "#0F172A", "chrome-fg": "#F2F4F8", "syn-path": "#4338CA", "syn-num": "#A16207", "syn-str": "#15803D", "syn-kw": "#6D28D9", "syn-type": "#0F766E", "syn-comment": "#94A3B8", "syn-bg": "#E4E8F0" } },
+    "s2d": { "name": "S2 Indigo",  "mode": "dark",  "tokens": { "bg": "#0F0F1F", "bg-2": "#1A1A2E", "bg-3": "#262640", "rule": "#2D2D44", "rule-strong": "#4A4A66", "text": "#E8E8F5", "text-muted": "#9696B8", "text-faint": "#6464AA", "accent": "#818CF8", "accent-hover": "#A5B4FC", "chrome-bg": "#1A1A2E", "chrome-fg": "#E8E8F5", "syn-path": "#818CF8", "syn-num": "#FBBF24", "syn-str": "#4ADE80", "syn-kw": "#C084FC", "syn-type": "#2DD4BF", "syn-comment": "#6464AA", "syn-bg": "#15152A" } },
+    "s3":  { "name": "S3 Lime",    "mode": "light", "tokens": { "bg": "#F4F6F8", "bg-2": "#E8ECF1", "bg-3": "#DAE0E8", "rule": "#C8D0DA", "rule-strong": "#A8B2BF", "text": "#0B1220", "text-muted": "#5A6470", "text-faint": "#8B95A1", "accent": "#65A30D", "accent-hover": "#4D7C0F", "chrome-bg": "#0B1220", "chrome-fg": "#F4F6F8", "syn-path": "#4D7C0F", "syn-num": "#BE185D", "syn-str": "#1E40AF", "syn-kw": "#6D28D9", "syn-type": "#0E7490", "syn-comment": "#7E8896", "syn-bg": "#E8ECF1" } },
+    "s3d": { "name": "S3 Lime",    "mode": "dark",  "tokens": { "bg": "#0F1117", "bg-2": "#1A1D26", "bg-3": "#262A35", "rule": "#2D3340", "rule-strong": "#4A5060", "text": "#E8EAED", "text-muted": "#9AA0AB", "text-faint": "#6B7280", "accent": "#84CC16", "accent-hover": "#A3E635", "chrome-bg": "#1A1D26", "chrome-fg": "#E8EAED", "syn-path": "#A3E635", "syn-num": "#F472B6", "syn-str": "#38BDF8", "syn-kw": "#C084FC", "syn-type": "#22D3EE", "syn-comment": "#6B7280", "syn-bg": "#14171E" } },
+    "s4":  { "name": "S4 Teal",    "mode": "light", "tokens": { "bg": "#F0F4F6", "bg-2": "#DEE8EB", "bg-3": "#C5D5D8", "rule": "#94ABB0", "rule-strong": "#648088", "text": "#0A1820", "text-muted": "#46606A", "text-faint": "#94ABB0", "accent": "#0E7490", "accent-hover": "#155E75", "chrome-bg": "#0A1820", "chrome-fg": "#F0F4F6", "syn-path": "#0E7490", "syn-num": "#A16207", "syn-str": "#15803D", "syn-kw": "#6D28D9", "syn-type": "#4338CA", "syn-comment": "#94ABB0", "syn-bg": "#DEE8EB" } },
+    "s4d": { "name": "S4 Teal",    "mode": "dark",  "tokens": { "bg": "#0A1820", "bg-2": "#14242E", "bg-3": "#1F343F", "rule": "#2F4855", "rule-strong": "#4C6878", "text": "#E6F0F3", "text-muted": "#94ABB0", "text-faint": "#648088", "accent": "#22D3EE", "accent-hover": "#67E8F9", "chrome-bg": "#14242E", "chrome-fg": "#E6F0F3", "syn-path": "#22D3EE", "syn-num": "#FBBF24", "syn-str": "#4ADE80", "syn-kw": "#C084FC", "syn-type": "#818CF8", "syn-comment": "#648088", "syn-bg": "#0E1E26" } },
+    "s5":  { "name": "S5 Violet",  "mode": "light", "tokens": { "bg": "#F4F4F8", "bg-2": "#E8E8F0", "bg-3": "#D5D5E0", "rule": "#9A9AB5", "rule-strong": "#6B6B8A", "text": "#14141F", "text-muted": "#4A4A60", "text-faint": "#9A9AB5", "accent": "#7C3AED", "accent-hover": "#6D28D9", "chrome-bg": "#14141F", "chrome-fg": "#F4F4F8", "syn-path": "#7C3AED", "syn-num": "#A16207", "syn-str": "#15803D", "syn-kw": "#BE185D", "syn-type": "#0E7490", "syn-comment": "#9A9AB5", "syn-bg": "#E8E8F0" } },
+    "s5d": { "name": "S5 Violet",  "mode": "dark",  "tokens": { "bg": "#14141F", "bg-2": "#1F1F2E", "bg-3": "#2D2D44", "rule": "#393952", "rule-strong": "#54546F", "text": "#ECECF5", "text-muted": "#9A9AB5", "text-faint": "#6B6B8A", "accent": "#A78BFA", "accent-hover": "#C4B5FD", "chrome-bg": "#1F1F2E", "chrome-fg": "#ECECF5", "syn-path": "#A78BFA", "syn-num": "#FBBF24", "syn-str": "#4ADE80", "syn-kw": "#F472B6", "syn-type": "#22D3EE", "syn-comment": "#6B6B8A", "syn-bg": "#1A1A28" } },
+    "s6":  { "name": "S6 Emerald", "mode": "light", "tokens": { "bg": "#F2F5F3", "bg-2": "#DDE8E2", "bg-3": "#C5D5CC", "rule": "#94B0A0", "rule-strong": "#648075", "text": "#0A1814", "text-muted": "#46605A", "text-faint": "#94B0A0", "accent": "#059669", "accent-hover": "#047857", "chrome-bg": "#0A1814", "chrome-fg": "#F2F5F3", "syn-path": "#059669", "syn-num": "#A16207", "syn-str": "#4338CA", "syn-kw": "#6D28D9", "syn-type": "#0E7490", "syn-comment": "#94B0A0", "syn-bg": "#DDE8E2" } },
+    "s6d": { "name": "S6 Emerald", "mode": "dark",  "tokens": { "bg": "#0A1814", "bg-2": "#14241F", "bg-3": "#1F352D", "rule": "#2F4C42", "rule-strong": "#4C7060", "text": "#E6F0EA", "text-muted": "#94B0A0", "text-faint": "#648075", "accent": "#34D399", "accent-hover": "#6EE7B7", "chrome-bg": "#14241F", "chrome-fg": "#E6F0EA", "syn-path": "#34D399", "syn-num": "#FBBF24", "syn-str": "#818CF8", "syn-kw": "#C084FC", "syn-type": "#22D3EE", "syn-comment": "#648075", "syn-bg": "#0E1E18" } },
+    "s7":  { "name": "S7 Slate",   "mode": "light", "tokens": { "bg": "#F4F5F7", "bg-2": "#E5E7EB", "bg-3": "#D1D5DB", "rule": "#9CA3AF", "rule-strong": "#6B7280", "text": "#111827", "text-muted": "#4B5563", "text-faint": "#9CA3AF", "accent": "#1E3A8A", "accent-hover": "#1E40AF", "chrome-bg": "#111827", "chrome-fg": "#F4F5F7", "syn-path": "#1E3A8A", "syn-num": "#A16207", "syn-str": "#15803D", "syn-kw": "#6D28D9", "syn-type": "#4338CA", "syn-comment": "#9CA3AF", "syn-bg": "#E5E7EB" } },
+    "s7d": { "name": "S7 Slate",   "mode": "dark",  "tokens": { "bg": "#0F1117", "bg-2": "#1A1D26", "bg-3": "#262A35", "rule": "#2D3340", "rule-strong": "#4A5060", "text": "#E8EAED", "text-muted": "#9AA0AB", "text-faint": "#6B7280", "accent": "#60A5FA", "accent-hover": "#93C5FD", "chrome-bg": "#1A1D26", "chrome-fg": "#E8EAED", "syn-path": "#60A5FA", "syn-num": "#FBBF24", "syn-str": "#4ADE80", "syn-kw": "#C084FC", "syn-type": "#818CF8", "syn-comment": "#6B7280", "syn-bg": "#16181F" } },
+    "k1":  { "name": "K1 Monokai",     "mode": "light", "source": "Monokai Pro Light Sun (derived)", "tokens": { "bg": "#FAF4ED", "bg-2": "#F2EDE0", "bg-3": "#E5DDC8", "rule": "#B5AE9C", "rule-strong": "#87836F", "text": "#2C2925", "text-muted": "#6B6660", "text-faint": "#B5AE9C", "accent": "#E14775", "accent-hover": "#C73E66", "chrome-bg": "#2C2925", "chrome-fg": "#FAF4ED", "syn-path": "#E14775", "syn-num": "#7B5BC7", "syn-str": "#8C7400", "syn-kw": "#E14775", "syn-type": "#0E7C95", "syn-comment": "#B5AE9C", "syn-bg": "#F2EDE0" } },
+    "k1d": { "name": "K1 Monokai",     "mode": "dark",  "source": "Wimer Hazenberg, Monokai",        "tokens": { "bg": "#272822", "bg-2": "#1E1F1C", "bg-3": "#3E3D32", "rule": "#49483E", "rule-strong": "#75715E", "text": "#F8F8F2", "text-muted": "#CFCFC2", "text-faint": "#75715E", "accent": "#F92672", "accent-hover": "#FD5C92", "chrome-bg": "#1E1F1C", "chrome-fg": "#F8F8F2", "syn-path": "#F92672", "syn-num": "#AE81FF", "syn-str": "#E6DB74", "syn-kw": "#F92672", "syn-type": "#66D9EF", "syn-comment": "#75715E", "syn-bg": "#1E1F1C" } },
+    "k2":  { "name": "K2 Solarized",   "mode": "light", "source": "Ethan Schoonover, Solarized",     "tokens": { "bg": "#FDF6E3", "bg-2": "#EEE8D5", "bg-3": "#93A1A1", "rule": "#93A1A1", "rule-strong": "#657B83", "text": "#586E75", "text-muted": "#657B83", "text-faint": "#93A1A1", "accent": "#268BD2", "accent-hover": "#2AA198", "chrome-bg": "#EEE8D5", "chrome-fg": "#586E75", "syn-path": "#268BD2", "syn-num": "#D33682", "syn-str": "#2AA198", "syn-kw": "#859900", "syn-type": "#B58900", "syn-comment": "#93A1A1", "syn-bg": "#EEE8D5" } },
+    "k2d": { "name": "K2 Solarized",   "mode": "dark",  "source": "Ethan Schoonover, Solarized",     "tokens": { "bg": "#002B36", "bg-2": "#073642", "bg-3": "#586E75", "rule": "#586E75", "rule-strong": "#839496", "text": "#93A1A1", "text-muted": "#657B83", "text-faint": "#586E75", "accent": "#268BD2", "accent-hover": "#2AA198", "chrome-bg": "#073642", "chrome-fg": "#93A1A1", "syn-path": "#268BD2", "syn-num": "#D33682", "syn-str": "#2AA198", "syn-kw": "#859900", "syn-type": "#B58900", "syn-comment": "#586E75", "syn-bg": "#073642" } },
+    "k3":  { "name": "K3 Dracula",     "mode": "light", "source": "Alucard (Dracula Pro)",           "tokens": { "bg": "#F8F8F2", "bg-2": "#EFEFEC", "bg-3": "#CDCDC2", "rule": "#CDCDC2", "rule-strong": "#9C9491", "text": "#1F1F1F", "text-muted": "#635D5C", "text-faint": "#9C9491", "accent": "#A3144C", "accent-hover": "#7A0F38", "chrome-bg": "#EFEFEC", "chrome-fg": "#1F1F1F", "syn-path": "#A3144C", "syn-num": "#644AC9", "syn-str": "#846E15", "syn-kw": "#14710A", "syn-type": "#036A96", "syn-comment": "#9C9491", "syn-bg": "#EFEFEC" } },
+    "k3d": { "name": "K3 Dracula",     "mode": "dark",  "source": "draculatheme.com",                "tokens": { "bg": "#282A36", "bg-2": "#21222C", "bg-3": "#44475A", "rule": "#44475A", "rule-strong": "#6272A4", "text": "#F8F8F2", "text-muted": "#BDBDC0", "text-faint": "#6272A4", "accent": "#FF79C6", "accent-hover": "#FFB8DA", "chrome-bg": "#21222C", "chrome-fg": "#F8F8F2", "syn-path": "#FF79C6", "syn-num": "#BD93F9", "syn-str": "#F1FA8C", "syn-kw": "#FF79C6", "syn-type": "#8BE9FD", "syn-comment": "#6272A4", "syn-bg": "#21222C" } },
+    "k4":  { "name": "K4 Nord",        "mode": "light", "source": "Nord Snow Storm (derived)",       "tokens": { "bg": "#ECEFF4", "bg-2": "#E5E9F0", "bg-3": "#D8DEE9", "rule": "#B0BEC5", "rule-strong": "#7B8995", "text": "#2E3440", "text-muted": "#434C5E", "text-faint": "#4C566A", "accent": "#5E81AC", "accent-hover": "#81A1C1", "chrome-bg": "#2E3440", "chrome-fg": "#ECEFF4", "syn-path": "#5E81AC", "syn-num": "#B48EAD", "syn-str": "#A3BE8C", "syn-kw": "#5E81AC", "syn-type": "#4E7C8A", "syn-comment": "#B0BEC5", "syn-bg": "#E5E9F0" } },
+    "k4d": { "name": "K4 Nord",        "mode": "dark",  "source": "nordtheme.com",                   "tokens": { "bg": "#2E3440", "bg-2": "#3B4252", "bg-3": "#434C5E", "rule": "#4C566A", "rule-strong": "#616E88", "text": "#D8DEE9", "text-muted": "#B0BEC5", "text-faint": "#81A1C1", "accent": "#88C0D0", "accent-hover": "#8FBCBB", "chrome-bg": "#3B4252", "chrome-fg": "#ECEFF4", "syn-path": "#88C0D0", "syn-num": "#B48EAD", "syn-str": "#A3BE8C", "syn-kw": "#81A1C1", "syn-type": "#8FBCBB", "syn-comment": "#4C566A", "syn-bg": "#2B303B" } },
+    "k5":  { "name": "K5 Tokyo Night", "mode": "light", "source": "Tokyo Night Day",                 "tokens": { "bg": "#E1E2E7", "bg-2": "#D5D6DB", "bg-3": "#C0C2CC", "rule": "#99A0B0", "rule-strong": "#6172B0", "text": "#3760BF", "text-muted": "#5A6691", "text-faint": "#99A0B0", "accent": "#9854F1", "accent-hover": "#B074F8", "chrome-bg": "#D5D6DB", "chrome-fg": "#3760BF", "syn-path": "#2E7DE9", "syn-num": "#B15C00", "syn-str": "#587539", "syn-kw": "#9854F1", "syn-type": "#007197", "syn-comment": "#848CB5", "syn-bg": "#D5D6DB" } },
+    "k5d": { "name": "K5 Tokyo Night", "mode": "dark",  "source": "enkia/tokyo-night",               "tokens": { "bg": "#1A1B26", "bg-2": "#16161E", "bg-3": "#292E42", "rule": "#3B4261", "rule-strong": "#565F89", "text": "#C0CAF5", "text-muted": "#A9B1D6", "text-faint": "#565F89", "accent": "#BB9AF7", "accent-hover": "#C4AFFF", "chrome-bg": "#16161E", "chrome-fg": "#C0CAF5", "syn-path": "#7AA2F7", "syn-num": "#FF9E64", "syn-str": "#9ECE6A", "syn-kw": "#BB9AF7", "syn-type": "#7DCFFF", "syn-comment": "#565F89", "syn-bg": "#16161E" } }
+  }
+}

@@ -59,13 +59,22 @@
   }
 
   function getInitialPalette() {
+    // url query wins for share-links / debugging
     const params = new URL(location.href).searchParams;
-    let initial = params.get('p');
-    if (!initial || !VALID.includes(initial)) {
-      try { initial = localStorage.getItem(PALETTE_KEY); } catch (e) {}
-    }
-    if (!VALID.includes(initial)) initial = DEFAULT_P;
-    return initial;
+    const fromUrl = params.get('p');
+    if (fromUrl && VALID.includes(fromUrl)) return fromUrl;
+    // user's previous explicit choice wins next
+    try {
+      const stored = localStorage.getItem(PALETTE_KEY);
+      if (stored && VALID.includes(stored)) return stored;
+    } catch (e) {}
+    // first-time visitor: respect prefers-color-scheme — primary is M2
+    try {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'm2d';
+      }
+    } catch (e) {}
+    return DEFAULT_P;
   }
 
   function ensureReveal() {

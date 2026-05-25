@@ -1,0 +1,26 @@
+{
+  "$schema": "agent-aesthetics typography tokens",
+  "families": {
+    "sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+    "mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace"
+  },
+  "scale": {
+    "h1":    { "size": 32, "weight": 700, "lineHeight": 1.15, "letterSpacing": "-0.01em", "case": "normal", "family": "sans" },
+    "h2":    { "size": 14, "weight": 700, "lineHeight": 1.3,  "letterSpacing": "0.12em",  "case": "uppercase", "family": "sans", "ruleBelow": true },
+    "h3":    { "size": 12, "weight": 700, "lineHeight": 1.3,  "letterSpacing": "0.14em",  "case": "uppercase", "family": "sans" },
+    "body":  { "size": 15, "weight": 400, "lineHeight": 1.55, "letterSpacing": "0",       "case": "normal", "family": "sans" },
+    "small": { "size": 13, "weight": 400, "lineHeight": 1.5,  "letterSpacing": "0",       "case": "normal", "family": "sans" },
+    "mono":  { "size": 13, "weight": 400, "lineHeight": 1.6,  "letterSpacing": "0",       "case": "normal", "family": "mono" }
+  },
+  "inlineMono": {
+    "description": "Use inline <code> (mono) inside prose for these categories. Pair with t-* class for semantic syntax color.",
+    "categories": {
+      "path":    { "class": "t-path", "examples": ["/work/project/file.ts", "https://example.com/", "src/main.rs"] },
+      "num":     { "class": "t-num",  "examples": ["0x4012a0", "1,247", "00:07:21", "$0.41", "#DB2777"] },
+      "str":     { "class": "t-str",  "examples": ["\"completed\"", "\"success\"", "'bbb{flag}'"] },
+      "kw":      { "class": "t-kw",   "examples": ["check_flag", "useEffect", "async", "if", "true"] },
+      "type":    { "class": "t-type", "examples": ["Promise<Result>", "uv_fs_t", "codex", "gpt-5.4-nano"] },
+      "comment": { "class": "t-cmt",  "examples": ["// note", "deprecated", "// TODO"] }
+    }
+  }
+}

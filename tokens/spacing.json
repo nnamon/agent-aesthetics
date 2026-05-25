@@ -1,0 +1,26 @@
+{
+  "$schema": "agent-aesthetics spacing tokens",
+  "base": 4,
+  "scale": {
+    "1": { "px": 4,  "var": "--space-1", "use": "tightest inline gap, small icon spacing" },
+    "2": { "px": 8,  "var": "--space-2", "use": "default inline gap, vertical-list rhythm" },
+    "3": { "px": 12, "var": "--space-3", "use": "compact-UI padding, dense form rows" },
+    "4": { "px": 16, "var": "--space-4", "use": "default button/input/list-row padding" },
+    "5": { "px": 24, "var": "--space-5", "use": "section spacing inside cards" },
+    "6": { "px": 32, "var": "--space-6", "use": "between-section spacing, default page horizontal padding" },
+    "7": { "px": 48, "var": "--space-7", "use": "page vertical padding, major grid gaps" },
+    "8": { "px": 64, "var": "--space-8", "use": "hero/major-section separation" }
+  },
+  "page": {
+    "wrapperMaxWidth": 1240,
+    "wrapperPadding": "var(--space-7) var(--space-6) var(--space-8)"
+  },
+  "radii": {
+    "default":      { "px": 0, "var": "--radius", "use": "default — no radius" },
+    "code":         { "px": 2, "var": "--radius-code", "use": "buttons, inputs, code blocks, badges" }
+  },
+  "rules": {
+    "thin":    { "weight": "1px solid var(--rule)", "use": "content dividers, table-row separators" },
+    "strong":  { "weight": "1px solid var(--rule-strong)", "use": "form input borders, section boundaries" }
+  }
+}
