@@ -1,0 +1,103 @@
+<!doctype html>
+<!--
+  ===========================================================================
+  STARTER TEMPLATE — copy THIS into a real project, not the other pages.
+
+  This is the correct minimal page for the agent-aesthetics kit. It has
+  NO palette/page switcher topbar — that bar is reference-site scaffolding
+  only (see assets/reference.js). A real page needs just:
+
+    1. <link> to styles.css
+    2. a `palette-m2` class on <body>
+    3. (optional) the tiny inline dark-mode script below
+    4. your content inside the standard `.page` wrapper
+
+  Do not copy reference.js. Do not add <nav class="topbar">.
+  ===========================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- The design kit. This is the only file you must copy. -->
+<link rel="stylesheet" href="assets/styles.css">
+
+<!--
+  OPTIONAL dark mode: M2 light is the default. This 4-line script swaps to
+  the M2 dark palette when the user's system prefers dark. Delete it if you
+  want to pin one mode. (No topbar, no switcher — just the body class.)
+-->
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.dataset.prefDark = '1';
+  }
+</script>
+</head>
+
+<!-- palette-m2 is the primary palette. palette-m2d is its dark variant. -->
+<body class="palette-m2">
+<script>
+  // apply the dark palette if the system prefers dark (set above, pre-paint)
+  if (document.documentElement.dataset.prefDark) document.body.className = 'palette-m2d';
+</script>
+
+<div class="page">
+
+  <!-- optional top row: brand on the left, an action/auth link on the right -->
+  <div class="top-row">
+    <span class="brand">My project</span>
+    <a class="signin" href="#">Sign in</a>
+  </div>
+
+  <!-- breadcrumbs instead of a nav bar (document-first) -->
+  <nav class="breadcrumb">
+    <a href="#">Home</a><span class="sep">/</span>
+    <span class="current">This page</span>
+  </nav>
+
+  <h1>Page title</h1>
+  <p style="color: var(--text-muted);">
+    Body prose. Use inline monospace for identifiers like
+    <code class="t-path">src/main.ts</code>, values like
+    <code class="t-num">0x4012a0</code>, and types like
+    <code class="t-type">Promise&lt;Result&gt;</code>.
+  </p>
+
+  <h2>A section</h2>
+  <p>Use the kit's component classes — copy markup from
+    <code class="t-path">components.html</code>:</p>
+
+  <div style="display: flex; gap: var(--space-2); margin: var(--space-4) 0;">
+    <a class="btn" href="#">Primary</a>
+    <a class="btn secondary" href="#">Secondary</a>
+  </div>
+
+  <div class="alert info" style="margin-bottom: var(--space-4);">
+    <span class="alert-mark">i</span>
+    <div>
+      <p class="alert-title">Note</p>
+      <p class="alert-body">Cards, alerts, tables, pills, code blocks, forms —
+        all live in styles.css. Don't reinvent them.</p>
+    </div>
+  </div>
+
+  <div class="codeblock">
+    <div class="lang">BASH</div>
+<pre><code>$ <span class="t-kw">echo</span> <span class="t-str">"this is the look"</span></code></pre>
+  </div>
+
+  <footer class="site">
+    <span>My project</span>
+    <nav><a href="#">About</a></nav>
+  </footer>
+
+</div>
+
+<!--
+  NO <script src="assets/reference.js"> here. That's reference-site only.
+  This page is complete as-is.
+-->
+</body>
+</html>

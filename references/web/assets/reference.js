@@ -1,6 +1,18 @@
-// agent-aesthetics — topbar (page nav + palette switcher + collapse toggle)
-// each page includes <nav class="topbar" id="topbar"></nav> in its body.
-// this script fills it and wires interactions. palette + collapsed state
+// ============================================================================
+//  REFERENCE-SITE HARNESS — NOT PART OF THE DESIGN KIT.
+//
+//  This file powers the reference site only: the palette switcher and the
+//  page-nav topbar that let you browse/compare the reference pages.
+//
+//  >>> DO NOT copy this file (or the topbar) into a real project. <<<
+//
+//  A real project needs only `assets/styles.css` and a `palette-m2` body
+//  class. See `references/web/_starter.html` for the correct minimal page,
+//  and AESTHETIC.md → "What is NOT part of the kit".
+// ============================================================================
+//
+// Mechanics: each reference page has <nav class="topbar" id="topbar"></nav>;
+// this script fills it and wires interactions. Palette + collapsed state
 // persist across pages via localStorage.
 
 (function () {
@@ -118,7 +130,7 @@
 
     slot.innerHTML =
       '<div class="topbar-row primary">' +
-        '<a class="brand" href="index.html">agent-aesthetics</a>' +
+        '<a class="brand" href="index.html">agent-aesthetics <span class="brand-tag">reference</span></a>' +
         '<div class="pagenav">' + pagesHtml + '</div>' +
         '<button class="topbar-close" title="Hide topbar (Esc)">×</button>' +
       '</div>' +
@@ -129,6 +141,11 @@
       '<div class="topbar-row palette">' +
         '<span class="label">Dark</span>' +
         paletteBtns(PALETTES_DARK) +
+      '</div>' +
+      '<div class="topbar-row note">' +
+        'These controls are for browsing this reference site only — ' +
+        'they are not part of the design kit. Real pages should not include ' +
+        'this bar. Start from <code>_starter.html</code>.' +
       '</div>';
 
     slot.querySelectorAll('button[data-p]').forEach(function (btn) {

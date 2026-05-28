@@ -64,6 +64,7 @@ agent-aesthetics/
 ├── screenshots/           # Showcase images used by this README.
 └── references/
     └── web/               # Eleven reference HTML pages, the show-don't-tell.
+        ├── _starter.html  # ← COPY THIS for a new project (no scaffolding).
         ├── index.html     # Hub: visual landing card grid.
         ├── log.html       # Run timeline + sidebar + code blocks.
         ├── dashboard.html # KPI tiles, charts, status, activity table.
@@ -76,8 +77,9 @@ agent-aesthetics/
         ├── signin.html    # Centered auth card.
         ├── notfound.html  # 404 + empty-state patterns.
         └── assets/
-            ├── styles.css # All palette + component CSS.
-            └── switcher.js# Injects topbar, handles palette + collapse.
+            ├── styles.css # All palette + component CSS. ← the design kit.
+            └── reference.js # Reference-site harness (topbar/switcher).
+                              #   NOT part of the kit — never ship it.
 ```
 
 ## Preview
@@ -120,12 +122,14 @@ projects but should default to M2.
 Read `AESTHETIC.md` for the principles and `prompts/CLAUDE.md` for the
 agent workflow. The TL;DR:
 
-1. Copy `references/web/assets/styles.css` + `assets/switcher.js`.
-2. Each page: `<link rel="stylesheet" href="assets/styles.css">`,
-   `<body class="palette-m2">`, `<nav class="topbar" id="topbar"></nav>`,
-   `<script src="assets/switcher.js"></script>`.
+1. Start from `references/web/_starter.html` — the clean minimal page.
+2. Copy **only** `references/web/assets/styles.css`. Each page:
+   `<link rel="stylesheet" href="assets/styles.css">`,
+   `<body class="palette-m2">`, content inside `<div class="page">`.
 3. Copy component markup from `references/web/components.html`.
-4. Don't add new colors, shadows, gradients, decorative icons, or
+4. **Don't** copy the reference topbar / palette switcher / `reference.js`
+   — that's scaffolding for browsing this reference site, not part of the
+   design. Don't add new colors, shadows, gradients, decorative icons, or
    rounded corners > 4px.
 
 ## Status

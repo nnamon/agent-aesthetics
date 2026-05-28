@@ -24,6 +24,32 @@ chrome elements, don't decorate. Stay inside the lines.
 
 ---
 
+## What is NOT part of the kit
+
+**The palette/page-switcher topbar is reference-site scaffolding. Do not
+copy it into real projects.**
+
+The reference pages each render a dark sticky bar at the top with a "Light"
+and "Dark" palette row and a row of page tabs (Log, Dashboard, Reader, …).
+That bar exists **only** so you can browse and compare the reference site.
+It is injected by `references/web/assets/reference.js` into the
+`<nav class="topbar" id="topbar" data-reference-only>` slot. It is **not**
+a design pattern and must never ship in a project that uses this kit.
+
+A real page needs **none** of it:
+- ❌ Don't copy `reference.js`.
+- ❌ Don't add `<nav class="topbar" id="topbar">`.
+- ❌ Don't reproduce the Light/Dark palette rows or the page-tab row.
+- ✅ Do copy `styles.css` and set `<body class="palette-m2">`.
+- ✅ Do start from `references/web/_starter.html` — the clean, correct
+  minimal page with no scaffolding.
+
+If a project has a top navigation, it's the project's own nav, designed
+per this spec (breadcrumbs / a `.top-row` brand+action bar) — never the
+reference switcher.
+
+---
+
 ## The aesthetic — "soft-brutalist-document"
 
 The page should read like a published technical document, not a SaaS
@@ -249,11 +275,13 @@ Page wrapper standard: `padding: var(--space-7) var(--space-6) var(--space-8);`
 </div>
 ```
 
-### Topbar (sticky)
+### Topbar (sticky) — REFERENCE SITE ONLY
 
-Two rows — page nav (primary) above palette switcher (secondary).
-Injected by `assets/switcher.js`; every page has only
-`<nav class="topbar" id="topbar"></nav>` as the slot.
+The dark sticky bar with palette rows + page tabs is **not** a kit
+pattern; it's scaffolding injected by `assets/reference.js` so you can
+browse the reference site. See "What is NOT part of the kit" above. Do
+not put it in a real project. A project's own top navigation, if any,
+uses breadcrumbs or a `.top-row` brand+action bar.
 
 ### Article + sidebar
 
@@ -323,21 +351,27 @@ These are always wrong:
 
 ## Implementation in a new project
 
+The single source of truth for a correct page is
+`references/web/_starter.html`. Copy it and fill in your content.
+
 Minimum viable adoption:
 
-1. Copy `references/web/assets/styles.css` and
-   `references/web/assets/switcher.js` into your project.
-2. Add to every page:
+1. Copy **only** `references/web/assets/styles.css` into your project.
+   (Do **not** copy `reference.js` — that's reference-site scaffolding.)
+2. Each page:
    ```html
    <link rel="stylesheet" href="assets/styles.css">
    <body class="palette-m2">
-     <nav class="topbar" id="topbar"></nav>
-     <!-- your content -->
-     <script src="assets/switcher.js"></script>
+     <div class="page">
+       <!-- your content -->
+     </div>
    </body>
    ```
+   No topbar, no switcher. For optional dark-mode auto-switching, use the
+   4-line `prefers-color-scheme` snippet shown in `_starter.html`.
 3. Use the existing component classes — buttons, alerts, cards, etc.
-4. Look at `references/web/components.html` for any pattern; copy markup.
+4. Look at `references/web/components.html` for any pattern; copy markup
+   (but never the `<nav class="topbar">` slot).
 
 For more elaborate setups, design tokens are in `tokens/*.json`:
 - `tokens/palettes.json` — all palette values + the `primary` field

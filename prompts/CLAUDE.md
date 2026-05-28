@@ -24,24 +24,44 @@ project they build, and consistency across projects is the whole point.
 - **No rounded corners > 4px.** Buttons/inputs use 2px radius.
 - **No decorative icons.** Icons are utility only.
 
+## CRITICAL: what NOT to copy
+
+The reference pages render a dark sticky **topbar** with "Light"/"Dark"
+palette rows and a row of page tabs (Log, Dashboard, Reader, …). **That
+bar is reference-site scaffolding, not part of the design.** It is
+injected by `assets/reference.js` into the
+`<nav class="topbar" id="topbar" data-reference-only>` slot, and it
+exists only so a human can browse and compare the reference site.
+
+When you adopt the kit into a real project:
+- ❌ NEVER copy `assets/reference.js`.
+- ❌ NEVER add `<nav class="topbar" id="topbar">`.
+- ❌ NEVER reproduce the palette rows or the page-tab row.
+
+If you find yourself copying a top bar with palette/page switchers, stop
+— you're copying the harness, not the design.
+
 ## How to use the kit in a new project
 
-Minimal viable adoption (works for almost any HTML page):
+The correct minimal page is `references/web/_starter.html`. Copy it.
 
-1. Copy `references/web/assets/styles.css` and
-   `references/web/assets/switcher.js` into your project's assets folder.
-2. On every page, include:
+1. Copy **only** `references/web/assets/styles.css` into your project's
+   assets folder. (Not `reference.js`.)
+2. Each page:
    ```html
    <link rel="stylesheet" href="assets/styles.css">
    <body class="palette-m2">
-     <nav class="topbar" id="topbar"></nav>
-     <!-- page content -->
-     <script src="assets/switcher.js"></script>
+     <div class="page">
+       <!-- page content -->
+     </div>
    </body>
    ```
+   No topbar, no switcher. For optional dark-mode auto-switching, copy the
+   4-line `prefers-color-scheme` snippet from `_starter.html` (it only
+   swaps the body class to `palette-m2d` — still no topbar).
 3. Use existing component classes (`.btn`, `.card`, `.alert`, `.pill`,
    `.codeblock`, etc.). Don't reinvent them — copy the markup from
-   `references/web/components.html`.
+   `references/web/components.html`, but never the `topbar` slot.
 
 For frameworks that compile CSS-in-JS or generate stylesheets, pull
 values from `tokens/palettes.json` (semantic CSS variable names),
@@ -84,6 +104,8 @@ If your page:
 
 ## What's wrong, fix immediately
 
+- The reference `topbar` / palette switcher / page-tab row shipped into
+  the project (delete it — it's scaffolding, see above)
 - Drop shadows for elevation
 - Multiple accent colors
 - Gradient buttons or backgrounds
