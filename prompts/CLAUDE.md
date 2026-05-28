@@ -45,20 +45,21 @@ If you find yourself copying a top bar with palette/page switchers, stop
 
 The correct minimal page is `references/web/_starter.html`. Copy it.
 
-1. Copy **only** `references/web/assets/styles.css` into your project's
-   assets folder. (Not `reference.js`.)
+1. Copy **only** `references/web/assets/theme.css` into your project's
+   assets folder. That single self-contained file IS the kit. Do NOT copy
+   `styles.css` (reference-site multi-palette + topbar) or `reference.js`.
 2. Each page:
    ```html
-   <link rel="stylesheet" href="assets/styles.css">
-   <body class="palette-m2">
+   <link rel="stylesheet" href="assets/theme.css">
+   <body>
      <div class="page">
        <!-- page content -->
      </div>
    </body>
    ```
-   No topbar, no switcher. For optional dark-mode auto-switching, copy the
-   4-line `prefers-color-scheme` snippet from `_starter.html` (it only
-   swaps the body class to `palette-m2d` — still no topbar).
+   No body class, no topbar, no switcher, no JS. `theme.css` ships M2:
+   light by default, dark automatically when the OS prefers dark. To pin a
+   mode regardless of OS, set `<html data-theme="dark">` or `="light"`.
 3. Use existing component classes (`.btn`, `.card`, `.alert`, `.pill`,
    `.codeblock`, etc.). Don't reinvent them — copy the markup from
    `references/web/components.html`, but never the `topbar` slot.

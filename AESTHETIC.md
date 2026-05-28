@@ -37,12 +37,21 @@ It is injected by `references/web/assets/reference.js` into the
 a design pattern and must never ship in a project that uses this kit.
 
 A real page needs **none** of it:
-- ❌ Don't copy `reference.js`.
+- ❌ Don't copy `reference.js` or `styles.css` (both are reference-site only).
 - ❌ Don't add `<nav class="topbar" id="topbar">`.
 - ❌ Don't reproduce the Light/Dark palette rows or the page-tab row.
-- ✅ Do copy `styles.css` and set `<body class="palette-m2">`.
+- ✅ Do copy `theme.css` — the one self-contained file a project needs.
 - ✅ Do start from `references/web/_starter.html` — the clean, correct
   minimal page with no scaffolding.
+
+### Two stylesheets, one is shippable
+
+- **`assets/theme.css`** — THE kit. M2 palette only (light + dark, auto
+  via `prefers-color-scheme`, override with `data-theme`) plus all base and
+  component styles. Self-contained. **This is the only file you ship.**
+- **`assets/styles.css`** — reference site only. It `@import`s `theme.css`
+  then adds the 24 extra palettes (as switchable `body.palette-*` classes)
+  and the topbar. Never ship it.
 
 If a project has a top navigation, it's the project's own nav, designed
 per this spec (breadcrumbs / a `.top-row` brand+action bar) — never the
@@ -356,19 +365,20 @@ The single source of truth for a correct page is
 
 Minimum viable adoption:
 
-1. Copy **only** `references/web/assets/styles.css` into your project.
-   (Do **not** copy `reference.js` — that's reference-site scaffolding.)
+1. Copy **only** `references/web/assets/theme.css` into your project.
+   (Not `styles.css`, not `reference.js` — those are reference-site only.)
 2. Each page:
    ```html
-   <link rel="stylesheet" href="assets/styles.css">
-   <body class="palette-m2">
+   <link rel="stylesheet" href="assets/theme.css">
+   <body>
      <div class="page">
        <!-- your content -->
      </div>
    </body>
    ```
-   No topbar, no switcher. For optional dark-mode auto-switching, use the
-   4-line `prefers-color-scheme` snippet shown in `_starter.html`.
+   No body class, no topbar, no switcher, no JS. `theme.css` is M2 light by
+   default and switches to M2 dark automatically when the OS prefers dark.
+   To pin a mode, set `<html data-theme="dark">` or `data-theme="light"`.
 3. Use the existing component classes — buttons, alerts, cards, etc.
 4. Look at `references/web/components.html` for any pattern; copy markup
    (but never the `<nav class="topbar">` slot).

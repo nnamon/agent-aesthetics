@@ -3,16 +3,18 @@
   ===========================================================================
   STARTER TEMPLATE — copy THIS into a real project, not the other pages.
 
-  This is the correct minimal page for the agent-aesthetics kit. It has
-  NO palette/page switcher topbar — that bar is reference-site scaffolding
-  only (see assets/reference.js). A real page needs just:
+  The whole kit a real project needs is ONE file: assets/theme.css.
+  It ships the M2 palette and themes itself:
+    - light by default
+    - dark automatically when the OS prefers dark (no JS)
+    - force a mode with <html data-theme="dark"> or data-theme="light"
 
-    1. <link> to styles.css
-    2. a `palette-m2` class on <body>
-    3. (optional) the tiny inline dark-mode script below
-    4. your content inside the standard `.page` wrapper
+  A real page therefore needs only:
+    1. <link rel="stylesheet" href="assets/theme.css">
+    2. your content inside a <div class="page"> wrapper
 
-  Do not copy reference.js. Do not add <nav class="topbar">.
+  Do NOT copy styles.css or reference.js, and do NOT add
+  <nav class="topbar"> — those power the reference site only.
   ===========================================================================
 -->
 <html lang="en">
@@ -21,27 +23,12 @@
 <title>My project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- The design kit. This is the only file you must copy. -->
-<link rel="stylesheet" href="assets/styles.css">
-
-<!--
-  OPTIONAL dark mode: M2 light is the default. This 4-line script swaps to
-  the M2 dark palette when the user's system prefers dark. Delete it if you
-  want to pin one mode. (No topbar, no switcher — just the body class.)
--->
-<script>
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.dataset.prefDark = '1';
-  }
-</script>
+<!-- The kit. The only file you must copy. Self-themes light/dark. -->
+<link rel="stylesheet" href="assets/theme.css">
 </head>
 
-<!-- palette-m2 is the primary palette. palette-m2d is its dark variant. -->
-<body class="palette-m2">
-<script>
-  // apply the dark palette if the system prefers dark (set above, pre-paint)
-  if (document.documentElement.dataset.prefDark) document.body.className = 'palette-m2d';
-</script>
+<!-- No palette class needed. To pin a mode, add data-theme to <html> above. -->
+<body>
 
 <div class="page">
 

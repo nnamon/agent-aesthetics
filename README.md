@@ -77,9 +77,10 @@ agent-aesthetics/
         ├── signin.html    # Centered auth card.
         ├── notfound.html  # 404 + empty-state patterns.
         └── assets/
-            ├── styles.css # All palette + component CSS. ← the design kit.
-            └── reference.js # Reference-site harness (topbar/switcher).
-                              #   NOT part of the kit — never ship it.
+            ├── theme.css  # ← THE KIT. M2 light+dark + components. Ship this.
+            ├── styles.css # Reference site only: @imports theme.css, then
+            │              #   adds the 24 extra palettes + topbar. Don't ship.
+            └── reference.js # Reference-site harness (topbar/switcher). Don't ship.
 ```
 
 ## Preview
@@ -123,14 +124,15 @@ Read `AESTHETIC.md` for the principles and `prompts/CLAUDE.md` for the
 agent workflow. The TL;DR:
 
 1. Start from `references/web/_starter.html` — the clean minimal page.
-2. Copy **only** `references/web/assets/styles.css`. Each page:
-   `<link rel="stylesheet" href="assets/styles.css">`,
-   `<body class="palette-m2">`, content inside `<div class="page">`.
+2. Copy **only** `references/web/assets/theme.css` — one self-contained
+   file. Each page: `<link rel="stylesheet" href="assets/theme.css">` and
+   content inside `<div class="page">`. No body class, no JS: it's M2 light
+   by default and auto-dark via `prefers-color-scheme` (pin with
+   `<html data-theme="dark">`).
 3. Copy component markup from `references/web/components.html`.
-4. **Don't** copy the reference topbar / palette switcher / `reference.js`
-   — that's scaffolding for browsing this reference site, not part of the
-   design. Don't add new colors, shadows, gradients, decorative icons, or
-   rounded corners > 4px.
+4. **Don't** copy `styles.css`, `reference.js`, or the topbar / palette
+   switcher — those power the reference site only. Don't add new colors,
+   shadows, gradients, decorative icons, or rounded corners > 4px.
 
 ## Status
 
